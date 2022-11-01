@@ -171,7 +171,57 @@ function App() {
     </div>
     </section>
 
+
   </section>
+  <section className="mid2cont">
+
+<section className="flex2">
+
+<div className="rec2">
+
+  <div className="seci">
+    <img src={secitex} className="seci" alt="Secitex" />
+  </div>
+
+  <div className="secimob">
+    <img src={secitex} className="secimob" alt="Secitex" />
+  </div>
+  
+  <h1 className="rec2h1">PROJETOS</h1>
+
+  <form action="https://youtube.com/">
+        <button type="submit" className="leiamais"></button>
+    </form>
+</div>
+
+<div className="rec2">
+
+  <div className="seci">
+    <img src={secitex} className="seci" alt="Secitex" />
+  </div>
+
+  <div className="secimob">
+    <img src={secitex} className="secimob" alt="Secitex" />
+  </div>
+
+  <h1 className="rec2h1">EVENTOS</h1>
+
+  <form action="https://youtube.com/">
+        <button type="submit" className="leiamais"></button>
+    </form>
+</div>
+
+<div className="rec2">
+  <h1 className="rec2h1">GAMEDU</h1>
+  <h1 className="rec2desc">Workshop de <br></br>desenvolvimento de <br></br>jogos</h1>
+  <form action="https://youtube.com/">
+        <button type="submit" className="leiamais"></button>
+    </form>
+</div>
+</section>
+
+</section>
+  
       </main>
       <footer className="footer">
 
