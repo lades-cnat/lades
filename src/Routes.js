@@ -8,7 +8,7 @@ export default () => {
 
     return (
         <Routes>
-                <Route exact path="/" element={<Home />} />
+                <Route exact path="/lades" element={<Home />} />
                 <Route exact path="/contato" element={<Contato />} />
         </Routes>
     );
