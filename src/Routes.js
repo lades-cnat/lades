@@ -8,8 +8,8 @@ export default () => {
 
     return (
         <Routes>
-                <Route exact path="/lades" element={<Home />} />
-                <Route exact path="/contato" element={<Contato />} />
+                <Route path="/lades" exact element={<Home />} />
+                <Route path="/lades/contato" exact element={<Contato />} />
         </Routes>
     );
 }
