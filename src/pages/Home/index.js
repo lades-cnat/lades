@@ -40,7 +40,7 @@ function Page() {
       <a href="https://www.youtube.com/" className="nucleo">PROJETOS</a>
 
 <ul className="ulcontato">
-<form action="/contato">
+<form action="/#/contato">
         <button type="submit" className="contato"></button>
     </form>
 </ul>

@@ -1,15 +1,18 @@
 import React from "react";
-import { Routes, Route } from 'react-router-dom';
+import { HashRouter, Routes, Route } from 'react-router-dom';
 
 import Home from './pages/Home'
-import Contato from './pages/contato'
+import Contato from './pages/Contato'
 
 export default () => {
 
     return (
+        <div>
         <Routes>
-                <Route exact path="/lades" element={<Home />} />
-                <Route exact path="/contato" element={<Contato />} />
+                <Route exact path="/" element={<Home />} />
+                <Route path="/contato" element={<Contato />} />
         </Routes>
+        </div>
+        
     );
 }

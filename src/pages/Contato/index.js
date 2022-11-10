@@ -1,16 +1,11 @@
-import './App.css';
+import React from 'react';
+import './Contato.css';
 
-import logonud from "./images/logonud.png"
+
 import logoprin from"./images/logoprin.png"
-import city from "./images/city.png"
-import pc from "./images/computador.png"
-import db from "./images/db.png"
-import conex from "./images/conexa.png"
-import pcchar from "./images/pccharacter.png"
-import controle from "./images/controle.png"
-import secitex from "./images/secitex.png"
+import mainimage from "./images/mainimage.png"
 
-function Contato() {
+function Page() {
   return (
     <div className="container">
       <head>
@@ -47,19 +42,14 @@ function Contato() {
 
 </header>
 
-      <main className="main">
+      <main className="maincontato">
 <h1 className="contate">Contate-nos</h1>
-  <main className="maincont">
+  <main className="maincontt">
     
   <div className="maincomps">
 
   <div className="mainimage">
-      <Image 
-      alt="Contato"
-      src={mainimage}
-      width={465}
-      height={337.92}
-      />
+      <img src={mainimage} className="mainimage" alt="Contato" />
 </div>
 
 <form className="mainbox">
@@ -78,4 +68,4 @@ function Contato() {
   );
 }
 
-export default Contato;
+export default Page;
