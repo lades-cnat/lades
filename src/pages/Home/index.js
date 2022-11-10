@@ -1,5 +1,4 @@
 import React from 'react';
-import {UseHistory} from 'react-router-dom'
 
 import './App.css';
 
@@ -41,13 +40,8 @@ function Page() {
       <a href="https://www.youtube.com/" className="nucleo">PROJETOS</a>
 
 <ul className="ulcontato">
-<<<<<<< HEAD
 <form action="/#/contato">
         <button type="submit" className="contato"></button>
-=======
-<form action="/lades/contato">
-        <button className="contato" type="submit"></button>
->>>>>>> 35a99814d629d18cd410f8bde5db9e4b0d00d84e
     </form>
 </ul>
 </ul>
