@@ -1,0 +1,225 @@
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: auto;
+    height: 62px;
+    
+    background-color: #15421C;
+    }
+    
+    .logopri {
+        padding: 40px !important;
+        width: 100%;
+        max-width: 121px;
+        min-width: 121px;
+    }
+    .ulheader {
+        display: flex;
+        align-items: center;
+    }
+    
+    .ulcontato {
+        padding-left: 30px;
+        display: flex;
+        align-items: center;
+    }
+    
+    .nav {
+        padding-right: 2%;
+    }
+    
+    .nucleo{
+    padding: 15px;
+    
+    text-decoration: none;
+    font-family: 'Khand', sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 24px;
+    background: none;
+            
+    color: #FFFFFF;
+    }
+    
+    .contato {
+    background-image: url("./images/contato.png");
+    width: 140px;
+    max-width: 140px;
+    height: 35px;
+    font-size: 15px;
+    color:#000000;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    outline: none;
+    background-color: #fff;
+    border: none;
+    border-radius: 50px;
+    transition-duration: 0.2s;
+    font-family: 'Khand', sans-serif;
+    }
+    
+    
+    
+    .contate {
+    margin: 5%;
+    font-family: 'Khand';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 40px;
+    line-height: 50px;
+    letter-spacing: 0.01em;
+    white-space: nowrap;
+    text-align: center;
+    
+    color: #15421C;
+    }
+    
+    .maincontt {
+        display: flex;
+        width: 100%;
+        max-width: auto;
+    }
+    
+    .maincomps {
+        margin-bottom: 10%;
+        margin-inline: 13%;
+        display: flex;
+        width: 100%;
+        max-width: auto;
+        justify-content: space-between;
+        align-items: center;
+    
+    }
+    .mainimage {
+    width: 100%;
+    height: auto;
+    min-width: 465px;
+    max-width: 465px;
+    }
+    
+    
+    .mainbox {
+    box-sizing: border-box;
+    
+    width: 100%;
+    max-width: 385px;
+    min-width: 385px;
+    max-height: 455px;
+    min-height: 455px;
+    
+    
+    background: #4B6B50;
+    opacity: 0.25;
+    border: 1px solid #000000;
+    border-radius: 20px;
+    }
+    
+    .nucleo:hover {
+        color: #b2c9b7;
+        transition: 0,8s;
+    }
+    
+    .nucleo:hover::before {
+        transition: 2s;
+      }
+    
+    .contato:hover {
+        border: 1px solid #FFFFFF;
+    }
+
+    .flex{
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        margin: 0 auto;
+        max-width: 1000px;
+    }
+    
+    .flex > div {
+        flex: 1 1 253px;
+        margin: 40px;
+    }
+    
+    .ldp {
+    
+    text-align: center;
+    padding: 80px;
+    height: 50px;
+    font-family: 'Lexend';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 40px;
+    line-height: 50px;
+        
+        
+    color: #15421C;
+    }
+    
+    .rectan{
+    width: 253px;
+    min-width: 253px;
+    max-width: 253px;
+    height: 185px;
+    
+            
+    background: #EBEBEB;
+    border-radius: 20px;
+    
+    }
+    
+    .figure {
+    text-align: center;
+    margin-top: 20px;
+    }
+    
+    .figmob{
+        display: none;
+    }
+    
+    .figdesc {
+    text-align: center;
+    margin-top: 30px;
+    
+    font-family: 'Lexend';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 20px;
+    text-align: center;
+    
+    color: #15421C;
+    }
+    
+    .rec2 {
+    width: 292px;
+    max-width: 292px;
+    height: 390px;
+        
+    background: #EBEBEB;
+    border-radius: 20px;
+    }
+    
+    @media (max-width: 1000px)
+    {
+        .ulheader{
+            display: none;
+        }
+    
+        .maincomps {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            width: 100%;
+            max-width: auto;
+        
+        }
+    
+        .maincomps > div {
+            flex: 1 1 500px;
+            margin: 150px;
+        }
+    }

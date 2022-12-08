@@ -1,6 +1,6 @@
 import React from 'react';
 
-import './App.css';
+import './Home.css';
 
 import logonud from "./images/logonud.png"
 import logoprin from"./images/logoprin.png"
@@ -35,9 +35,10 @@ function Page() {
 <ul className="ulheader">
       <a href="https://www.youtube.com/" className="nucleo">O NÚCLEO</a>
       <a href="https://www.youtube.com/" className="nucleo">NOTICIAS</a>
-      <a href="https://www.youtube.com/" className="nucleo">PESQUISADORES</a>
+      <a href="/lades/#/sobre" className="nucleo">PESQUISADORES</a>
       <a href="https://www.youtube.com/" className="nucleo">LINHAS DE PESQUISA</a>
       <a href="https://www.youtube.com/" className="nucleo">PROJETOS</a>
+      <a href="https://www.youtube.com/" className="nucleo">BIBLIOTECA</a>
 
 <ul className="ulcontato">
 <form action="/lades/#/contato">
@@ -54,14 +55,14 @@ function Page() {
 
       <div className="textomob">
 
-      <h1>NÚCLEO DE DESENVOLVIMENTO DE <br></br>SOFTWARE DO IFRN</h1>
+      <h1>LABORATÓRIO DE DESENVOLVIMENTO DE SOFTWARE DO IFRN</h1>
       
       </div>
 
     <div className="textandlogo">
       <div className="textop">
 
-      <h1>NÚCLEO DE DESENVOLVIMENTO DE <br></br>SOFTWARE DO IFRN</h1>
+      <h1>LABORATÓRIO DE DESENVOLVIMENTO DE SOFTWARE DO IFRN</h1>
       
       </div>
 

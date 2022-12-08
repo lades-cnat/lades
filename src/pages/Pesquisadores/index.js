@@ -1,5 +1,5 @@
 import React from 'react';
-import './Contato.css';
+import './Pesquisadores.css';
 
 
 import logoprin from"./images/logoprin.png"
@@ -9,7 +9,7 @@ function Page() {
   return (
     <div className="container">
       <head>
-        <title>NUDES</title>
+        <title>LADES - Sobre</title>
         <meta name="description" content="Página home" />
         <link rel="icon" href="/favicon.ico" />
       </head>
@@ -44,23 +44,75 @@ function Page() {
 </header>
 
       <main className="maincontato">
-<h1 className="contate">Contate-nos</h1>
-  <main className="maincontt">
-    
-  <div className="maincomps">
+<h1 className="contate">Quem somos?</h1>
+<section className="flex">
 
-  <div className="mainimage">
-      <img src={mainimage} className="mainimage" alt="Contato" />
+<div className="rectan">
+  
+    <div className="figure">
+    </div>
+
+    <div className="figmob">
+    </div>
+
+    <h1 className="figdesc">Danielle Freitas</h1>
 </div>
 
-<form className="mainbox">
-    
-</form>
+<div className="">
+    <h1 className="sobreonuc">Criado em 2005, o Laboratório de Desenvolvimento de Software tem como principal objetivo oferecer aos alunos das áreas de desenvolvimento de sistemas técnicos e superiores de tecnologia uma oportunidade para a consolidação dos conhecimentos apresentados em sala de aula</h1>
 
 </div>
 
-  </main>
+<div className="rectan">
 
+  <div className="figure">
+      </div>
+
+      <div className="figmob">
+      </div>
+
+    <h1 className="figdesc">Leonardo Lucena</h1>
+
+</div>
+
+<div className="rectan">
+
+      <div className="figure">
+        
+      </div>
+
+      <div className="figmob">
+      </div>
+
+      <h1 className="figdesc">Leonardo Minora</h1>
+
+</div>
+
+<div className="rectan">
+
+      <div className="figure">
+      </div>
+      
+      <div className="figmob">
+      </div>
+
+      <h1 className="figdesc">Gilbert Azevedo</h1>
+
+</div>
+
+<div className="rectan">
+
+      <div className="figure">
+      </div>
+
+      <div className="figmob">
+      </div>
+
+      <h1 className="figdesc">Demóstenes</h1>
+
+</div>
+
+</section>
       </main>
       <footer className="footer">
 
