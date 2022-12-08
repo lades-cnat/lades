@@ -131,7 +131,7 @@
         border: 1px solid #FFFFFF;
     }
 
-    .flex{
+    .flexp{
         display: flex;
         justify-content: center;
         flex-wrap: wrap;
@@ -139,7 +139,7 @@
         max-width: 1000px;
     }
     
-    .flex > div {
+    .flexp > div {
         flex: 1 1 253px;
         margin: 40px;
     }
@@ -159,7 +159,7 @@
     color: #15421C;
     }
     
-    .rectan{
+    .rectanp{
     width: 253px;
     min-width: 253px;
     max-width: 253px;

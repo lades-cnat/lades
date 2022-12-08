@@ -1,6 +1,6 @@
 import React from 'react';
 
-import './Home.css';
+import './Inicial.css';
 
 import logonud from "./images/logonud.png"
 import logoprin from"./images/logoprin.png"
@@ -86,90 +86,90 @@ function Page() {
     <h1 className="ldp">Linhas de Pesquisa</h1>
 
 
-    <section className="flex">
+    <section className="flexh">
 
-    <div className="rectan">
+    <div className="rectanhome">
       
-        <div className="figure">
+        <div className="figureh">
         <img src={city} className="figure" alt="Cidades Tecnológicas" />
         </div>
 
-        <div className="figmob">
+        <div className="figmobh">
         <img src={city} className="figmob" alt="Cidades Tecnológicas" />
         </div>
 
-        <h1 className="figdesc">Temas de convergência:<br></br>
+        <h1 className="figdesch">Temas de convergência:<br></br>
         Cidades inteligentes</h1>
     </div>
 
-    <div className="rectan">
+    <div className="rectanhome">
 
-        <div className="figure">
+        <div className="figureh">
         <img src={pc} className="figure" alt="Aparelhos" />
         </div>
 
-        <div className="figmob">
+        <div className="figmobh">
         <img src={pc} className="figmob" alt="Aparelhos" />
         </div>
 
-        <h1 className="figdesc">Qualidade e <br></br>produtividade de <br></br>software</h1>
+        <h1 className="figdesch">Qualidade e <br></br>produtividade de <br></br>software</h1>
 
     </div>
 
-    <div className="rectan">
+    <div className="rectanhome">
 
-      <div className="figure">
+      <div className="figureh">
             <img src={db} className="figure" alt="Banco de Dados" />
           </div>
 
-          <div className="figmob">
+          <div className="figmobh">
             <img src={db} className="figmob" alt="Banco de Dados" />
           </div>
 
-        <h1 className="figdesc">Bancos de Dados, Big Data <br></br>e análise de dados</h1>
+        <h1 className="figdesch">Bancos de Dados, Big Data <br></br>e análise de dados</h1>
 
     </div>
 
-    <div className="rectan">
+    <div className="rectanhome">
 
-          <div className="figure">
+          <div className="figureh">
             <img src={conex} className="figure" alt="Conexões" />
             
           </div>
 
-          <div className="figmob">
+          <div className="figmobh">
             <img src={conex} className="figmob" alt="Conexões" />
           </div>
 
-          <h1 className="figdesc">Sistemas Embarcados e<br></br>Móveis</h1>
+          <h1 className="figdesch">Sistemas Embarcados e<br></br>Móveis</h1>
 
     </div>
 
-    <div className="rectan">
+    <div className="rectanhome">
 
-          <div className="figure">
+          <div className="figureh">
             <img src={controle} className="figure" alt="Controle" />
           </div>
           
-          <div className="figmob">
+          <div className="figmobh">
             <img src={controle} className="figmob" alt="Controle" />
           </div>
 
-          <h1 className="figdesc">Desenvolvimento de<br></br>Jogos Digitais</h1>
+          <h1 className="figdesch">Desenvolvimento de<br></br>Jogos Digitais</h1>
 
     </div>
 
-    <div className="rectan">
+    <div className="rectanhome">
 
-          <div className="figure">
+          <div className="figureh">
             <img src={pcchar} className="figure" alt="Usuário" />
           </div>
 
-          <div className="figmob">
+          <div className="figmobh">
             <img src={pcchar} className="figmob" alt="Usuário" />
           </div>
 
-          <h1 className="figdesc">Engenharia de Serviços</h1>
+          <h1 className="figdesch">Engenharia de Serviços</h1>
 
     </div>
     </section>

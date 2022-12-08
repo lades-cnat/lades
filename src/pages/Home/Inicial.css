@@ -156,7 +156,7 @@ body {
       height: 735px;
       }
   
-  .flex{
+  .flexh{
       display: flex;
       justify-content: center;
       flex-wrap: wrap;
@@ -164,7 +164,7 @@ body {
       max-width: 1000px;
   }
   
-  .flex > div {
+  .flexh > div {
       flex: 1 1 253px;
       margin: 40px;
   }
@@ -184,7 +184,7 @@ body {
   color: #15421C;
   }
   
-  .rectan{
+  .rectanhome{
   width: 253px;
   min-width: 253px;
   max-width: 253px;
@@ -196,16 +196,16 @@ body {
   
   }
   
-  .figure {
+  .figureh {
   text-align: center;
   margin-top: 20px;
   }
   
-  .figmob{
+  .figmobh{
       display: none;
   }
   
-  .figdesc {
+  .figdesch {
   text-align: center;
   margin-top: 30px;
   

@@ -44,7 +44,7 @@ function Page() {
 </header>
 
       <main className="maincontato">
-<h1 className="contate">Contate-nos</h1>
+<h1 className="contatec">Contate-nos</h1>
   <main className="maincontt">
     
   <div className="maincomps">

@@ -45,9 +45,9 @@ function Page() {
 
       <main className="maincontato">
 <h1 className="contate">Conheça nossos pesquisadores</h1>
-<section className="flex">
+<section className="flexp">
 
-<div className="rectan">
+<div className="rectanp">
   
     <div className="figure">
     </div>
@@ -58,7 +58,7 @@ function Page() {
     <h1 className="figdesc">Danielle Freitas</h1>
 </div>
 
-<div className="rectan">
+<div className="rectanp">
 
     <div className="figure">
     </div>
@@ -70,7 +70,7 @@ function Page() {
 
 </div>
 
-<div className="rectan">
+<div className="rectanp">
 
   <div className="figure">
       </div>
@@ -82,7 +82,7 @@ function Page() {
 
 </div>
 
-<div className="rectan">
+<div className="rectanp">
 
       <div className="figure">
         
@@ -95,7 +95,7 @@ function Page() {
 
 </div>
 
-<div className="rectan">
+<div className="rectanp">
 
       <div className="figure">
       </div>
@@ -107,7 +107,7 @@ function Page() {
 
 </div>
 
-<div className="rectan">
+<div className="rectanp">
 
       <div className="figure">
       </div>
@@ -119,7 +119,7 @@ function Page() {
 
 </div>
 
-<div className="rectan">
+<div className="rectanp">
 
       <div className="figure">
       </div>
@@ -131,7 +131,7 @@ function Page() {
 
 </div>
 
-<div className="rectan">
+<div className="rectanp">
 
       <div className="figure">
       </div>
@@ -143,7 +143,7 @@ function Page() {
 
 </div>
 
-<div className="rectan">
+<div className="rectanp">
 
       <div className="figure">
       </div>
