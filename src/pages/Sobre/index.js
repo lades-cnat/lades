@@ -3,7 +3,8 @@ import './Sobre.css';
 
 
 import logoprin from"./images/logoprin.png"
-import mainimage from "./images/mainimage.png"
+import pcecelular from "./images/pcecelular.png"
+import celulares from "./images/celulares.png"
 
 function Page() {
   return (
@@ -47,15 +48,8 @@ function Page() {
 <h1 className="contate">Quem somos?</h1>
 <section className="flex">
 
-<div className="rectan">
-  
-    <div className="figure">
-    </div>
-
-    <div className="figmob">
-    </div>
-
-    <h1 className="figdesc">Danielle Freitas</h1>
+<div className="imagem">
+    <img src={pcecelular} className="pcecelular" alt="Informação" />
 </div>
 
 <div className="">
@@ -63,52 +57,21 @@ function Page() {
 
 </div>
 
-<div className="rectan">
-
-  <div className="figure">
-      </div>
-
-      <div className="figmob">
-      </div>
-
-    <h1 className="figdesc">Leonardo Lucena</h1>
+<div className="">
+    <h1 className="sobreonuc">Para atingir o seu objetivo o laboratório na captação de projetos de pesquisa e extensão em </h1>
 
 </div>
 
-<div className="rectan">
-
-      <div className="figure">
-        
-      </div>
-
-      <div className="figmob">
-      </div>
-
-      <h1 className="figdesc">Leonardo Minora</h1>
-
+<div className="imagem">
+    <img src={pcecelular} className="pcecelular" alt="Informação" />
 </div>
 
-<div className="rectan">
-
-      <div className="figure">
-      </div>
-      
-      <div className="figmob">
-      </div>
-
-      <h1 className="figdesc">Gilbert Azevedo</h1>
-
+<div className="imagem">
+    <img src={celulares} className="pcecelular" alt="Informação" />
 </div>
 
-<div className="rectan">
-
-      <div className="figure">
-      </div>
-
-      <div className="figmob">
-      </div>
-
-      <h1 className="figdesc">Demóstenes</h1>
+<div className="">
+    <h1 className="sobreonuc">Criado em 2005, o Laboratório de Desenvolvimento de Software tem como principal objetivo oferecer aos alunos das áreas de desenvolvimento de sistemas técnicos e superiores de tecnologia uma oportunidade para a consolidação dos conhecimentos apresentados em sala de aula</h1>
 
 </div>
 

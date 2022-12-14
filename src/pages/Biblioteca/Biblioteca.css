@@ -78,46 +78,161 @@
     color: #15421C;
 }
 
-.maincontt {
-    display: flex;
+.sectionone{
+    background: linear-gradient(#b2c9b7 , #fff, #FFFFFF);
+    background-size: 100%;
     width: 100%;
-    max-width: auto;
+    height: 275px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-.maincomps {
-    margin-bottom: 10%;
-    margin-inline: 13%;
+.biblitext {
+    font-family: 'Lexend';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 40px;
+    line-height: 50px;
+    color: #15421C;
+}
+
+.sectiontwo {
+    background: #15421C;
+    background-size: 100%;
+    max-width: 300vh;
+    height: 350px;
     display: flex;
-    width: 100%;
-    max-width: auto;
+    justify-content: space-between;
+    align-items: center;
+    
+}
+
+.texts2 {
+    display: inline;
+    padding: 30vh;
+}
+
+.ofon {
+    padding-bottom: 10px;
+    font-family: 'Lexend';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 30px;
+    line-height: 30px;
+    color: #FFFFFF;
+}
+
+.sectcoment {
+    font-family: 'Lexend';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 30px;
+    line-height: 30px;
+    color: #FFFFFF;
+    padding: 30vh;
+}
+
+.sectcoment2 {
+    font-family: 'Lexend';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 25px;
+    color: #FFFFFF;
+    
+}
+
+.sectionthree {
+    background: #0b220e;
+    background-size: 100%;
+    max-width: 300vh;
+    height: 175px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.searchbarr {
+    width: 750px;
+    height: 35px;
+    background-color: #FFFFFF;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.searchtext {
+    padding: 15px;
+    font-size: 16px;
+    opacity: 50%;
+}
+
+.sectionfour {
+    background-color: #0b220e;
+    max-width: 300vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.fb {
+    font-family: 'Lexend';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 25px;
+    color: #FFFFFF;
+
+    margin-left: 15vh;
+}
+
+.sectionfive {
+    background-color: #0b220e;
+    max-width: 300vh;
+    height: 100px;
+    display: flex;
     justify-content: space-between;
     align-items: center;
 
 }
 
-.mainimage {
-    width: 100%;
-    height: auto;
-    min-width: 465px;
-    max-width: 465px;
+.fivedivs1 {
+    width: 250px;
+    height: 35px;
+    background-color: #FFFFFF;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    margin-left: 30vh;
+
+}
+
+.fivedivs2 {
+    width: 250px;
+    height: 35px;
+    background-color: #FFFFFF;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+
+}
+
+.fivedivs3 {
+    width: 250px;
+    height: 35px;
+    background-color: #FFFFFF;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    margin-right: 30vh;
 }
 
 
-.mainbox {
-    box-sizing: border-box;
-
-    width: 100%;
-    max-width: 385px;
-    min-width: 385px;
-    max-height: 455px;
-    min-height: 455px;
 
 
-    background: #4B6B50;
-    opacity: 0.25;
-    border: 1px solid #000000;
-    border-radius: 20px;
-}
+
+
 
 .nucleo:hover {
     color: #b2c9b7;

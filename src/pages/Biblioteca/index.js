@@ -43,23 +43,48 @@ function Page() {
 
       </header>
 
-      <main className="maincontato">
-        <h1 className="contatec">Contate-nos</h1>
-        <main className="maincontt">
+      <main className="main">
 
-          <div className="maincomps">
+        <main className="sectionone">
 
-            <div className="mainimage">
-              <img src={mainimage} className="mainimage" alt="Contato" />
-            </div>
+          <h1 className="biblitext">Biblioteca</h1>
 
-            <form className="mainbox">
+        </main>
 
-            </form>
+        <main className="sectiontwo">
+
+          <h1 className="sectcoment">Sinta-se convidado para<br></br> conhecer nosso acervo que<br></br>está disponível no núcleo!</h1>
+
+          <div className="texts2">
+
+            <h1 className="ofon">Onde fica o núcleo?</h1>
+
+            <h1 className="sectcoment2">17º andar da Diac, terceira porta à esquerda.<br></br>
+              IFRN Campus Natal Central
+            </h1>
 
           </div>
 
         </main>
+
+        <main className="sectionthree">
+
+          <section className="searchbarr">
+            <h1 className='searchtext'>Buscar por título, gênero, autor, editora e palavra-chave</h1>
+          </section>
+
+        </main>
+
+        <main className="sectionfour">
+            <h1 className="fb">Filtrar biblioteca</h1>
+        </main>
+
+        <main className="sectionfive">
+            <div className="fivedivs1"></div>
+            <div className="fivedivs2"></div>
+            <div className="fivedivs3"></div>
+        </main>
+
 
       </main>
 
