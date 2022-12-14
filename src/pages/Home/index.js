@@ -33,12 +33,12 @@ function Page() {
 
 <nav className="nav">
 <ul className="ulheader">
-      <a href="https://www.youtube.com/" className="nucleo">O NÚCLEO</a>
+      <a href="/lades/#/sobre" className="nucleo">O NÚCLEO</a>
       <a href="https://www.youtube.com/" className="nucleo">NOTICIAS</a>
-      <a href="/lades/#/sobre" className="nucleo">PESQUISADORES</a>
-      <a href="https://www.youtube.com/" className="nucleo">LINHAS DE PESQUISA</a>
+      <a href="/lades/#/pesquisadores" className="nucleo">PESQUISADORES</a>
+      <a href="/lades/#/pesquisa" className="nucleo">LINHAS DE PESQUISA</a>
       <a href="https://www.youtube.com/" className="nucleo">PROJETOS</a>
-      <a href="https://www.youtube.com/" className="nucleo">BIBLIOTECA</a>
+      <a href="/lades/#/biblioteca" className="nucleo">BIBLIOTECA</a>
 
 <ul className="ulcontato">
 <form action="/lades/#/contato">

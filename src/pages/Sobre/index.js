@@ -26,12 +26,12 @@ function Page() {
 
 <nav className="nav">
 <ul className="ulheader">
-      <a href="https://www.youtube.com/" className="nucleo">O NÚCLEO</a>
+      <a href="/lades/#/sobre" className="nucleo">O NÚCLEO</a>
       <a href="https://www.youtube.com/" className="nucleo">NOTICIAS</a>
-      <a href="/lades/#/sobre" className="nucleo">PESQUISADORES</a>
-      <a href="https://www.youtube.com/" className="nucleo">LINHAS DE PESQUISA</a>
+      <a href="/lades/#/pesquisadores" className="nucleo">PESQUISADORES</a>
+      <a href="/lades/#/pesquisa" className="nucleo">LINHAS DE PESQUISA</a>
       <a href="https://www.youtube.com/" className="nucleo">PROJETOS</a>
-      <a href="https://www.youtube.com/" className="nucleo">BIBLIOTECA</a>
+      <a href="/lades/#/biblioteca" className="nucleo">BIBLIOTECA</a>
 
 <ul className="ulcontato">
 <form action="/lades/#/contato">
@@ -44,10 +44,10 @@ function Page() {
 </header>
 
       <main className="maincontato">
-<h1 className="contate">Conheça nossos pesquisadores</h1>
-<section className="flexp">
+<h1 className="contate">Quem somos?</h1>
+<section className="flex">
 
-<div className="rectanp">
+<div className="rectan">
   
     <div className="figure">
     </div>
@@ -58,19 +58,12 @@ function Page() {
     <h1 className="figdesc">Danielle Freitas</h1>
 </div>
 
-<div className="rectanp">
-
-    <div className="figure">
-    </div>
-
-    <div className="figmob">
-    </div>
-
-    <h1 className="figdesc">Alessandro Souza</h1>
+<div className="">
+    <h1 className="sobreonuc">Criado em 2005, o Laboratório de Desenvolvimento de Software tem como principal objetivo oferecer aos alunos das áreas de desenvolvimento de sistemas técnicos e superiores de tecnologia uma oportunidade para a consolidação dos conhecimentos apresentados em sala de aula</h1>
 
 </div>
 
-<div className="rectanp">
+<div className="rectan">
 
   <div className="figure">
       </div>
@@ -82,7 +75,7 @@ function Page() {
 
 </div>
 
-<div className="rectanp">
+<div className="rectan">
 
       <div className="figure">
         
@@ -95,7 +88,7 @@ function Page() {
 
 </div>
 
-<div className="rectanp">
+<div className="rectan">
 
       <div className="figure">
       </div>
@@ -107,7 +100,7 @@ function Page() {
 
 </div>
 
-<div className="rectanp">
+<div className="rectan">
 
       <div className="figure">
       </div>
@@ -116,42 +109,6 @@ function Page() {
       </div>
 
       <h1 className="figdesc">Demóstenes</h1>
-
-</div>
-
-<div className="rectanp">
-
-      <div className="figure">
-      </div>
-
-      <div className="figmob">
-      </div>
-
-      <h1 className="figdesc">Nome do Pesquisador</h1>
-
-</div>
-
-<div className="rectanp">
-
-      <div className="figure">
-      </div>
-
-      <div className="figmob">
-      </div>
-
-      <h1 className="figdesc">Nome do Pesquisador</h1>
-
-</div>
-
-<div className="rectanp">
-
-      <div className="figure">
-      </div>
-
-      <div className="figmob">
-      </div>
-
-      <h1 className="figdesc">Nome do Pesquisador</h1>
 
 </div>
 
