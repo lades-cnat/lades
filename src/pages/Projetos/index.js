@@ -1,5 +1,5 @@
 import React from 'react';
-import './Contato.css';
+import './Projetos.css';
 
 
 import logoprin from "./images/logoprin.png"
@@ -9,7 +9,7 @@ function Page() {
   return (
     <div className="container">
       <head>
-        <title>NUDES</title>
+        <title>LADES</title>
         <meta name="description" content="Página home" />
         <link rel="icon" href="/favicon.ico" />
       </head>

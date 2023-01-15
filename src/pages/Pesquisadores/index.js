@@ -3,7 +3,6 @@ import './Pesquisadores.css';
 
 
 import logoprin from"./images/logoprin.png"
-import mainimage from "./images/mainimage.png"
 
 function Page() {
   return (
@@ -26,11 +25,11 @@ function Page() {
 
 <nav className="nav">
 <ul className="ulheader">
-      <a href="/lades/#/sobre" className="nucleo">O NÚCLEO</a>
+      <a href="/lades/#/sobre" className="nucleo">LABORATÓRIO</a>
       <a href="https://www.youtube.com/" className="nucleo">NOTICIAS</a>
       <a href="/lades/#/pesquisadores" className="nucleo">PESQUISADORES</a>
       <a href="/lades/#/pesquisa" className="nucleo">LINHAS DE PESQUISA</a>
-      <a href="https://www.youtube.com/" className="nucleo">PROJETOS</a>
+      <a href="/lades/#/projetos" className="nucleo">PROJETOS</a>
       <a href="/lades/#/biblioteca" className="nucleo">BIBLIOTECA</a>
 
 <ul className="ulcontato">
@@ -127,7 +126,7 @@ function Page() {
       <div className="figmob">
       </div>
 
-      <h1 className="figdesc">Nome do Pesquisador</h1>
+      <h1 className="figdesc">Alexandre Gomes</h1>
 
 </div>
 
@@ -139,7 +138,7 @@ function Page() {
       <div className="figmob">
       </div>
 
-      <h1 className="figdesc">Nome do Pesquisador</h1>
+      <h1 className="figdesc">Cláudia Maria</h1>
 
 </div>
 
@@ -151,7 +150,91 @@ function Page() {
       <div className="figmob">
       </div>
 
-      <h1 className="figdesc">Nome do Pesquisador</h1>
+      <h1 className="figdesc">Fellipe Araújo</h1>
+
+</div>
+
+<div className="rectanp">
+
+      <div className="figure">
+      </div>
+
+      <div className="figmob">
+      </div>
+
+      <h1 className="figdesc">George Azevedo</h1>
+
+</div>
+
+<div className="rectanp">
+
+      <div className="figure">
+      </div>
+
+      <div className="figmob">
+      </div>
+
+      <h1 className="figdesc">Helder Pacheco</h1>
+
+</div>
+
+<div className="rectanp">
+
+      <div className="figure">
+      </div>
+
+      <div className="figmob">
+      </div>
+
+      <h1 className="figdesc">José Antônio</h1>
+
+</div>
+
+<div className="rectanp">
+
+      <div className="figure">
+      </div>
+
+      <div className="figmob">
+      </div>
+
+      <h1 className="figdesc">Marilia Aranha Freire</h1>
+
+</div>
+
+<div className="rectanp">
+
+      <div className="figure">
+      </div>
+
+      <div className="figmob">
+      </div>
+
+      <h1 className="figdesc">Plácido Antonio </h1>
+
+</div>
+
+<div className="rectanp">
+
+      <div className="figure">
+      </div>
+
+      <div className="figmob">
+      </div>
+
+      <h1 className="figdesc">Robinson Luis</h1>
+
+</div>
+
+<div className="rectanp">
+
+      <div className="figure">
+      </div>
+
+      <div className="figmob">
+      </div>
+
+      <h1 className="figdesc">Silvia Aparecida</h1>
 
 </div>
 

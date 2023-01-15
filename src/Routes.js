@@ -7,6 +7,7 @@ import Sobre from './pages/Sobre'
 import Pesquisadores from './pages/Pesquisadores'
 import Pesquisa from './pages/Pesquisa'
 import Biblioteca from './pages/Biblioteca'
+import Projetos from './pages/Projetos'
 
 export default () => {
 
@@ -20,6 +21,7 @@ export default () => {
                 <Route path="/pesquisadores" element={<Pesquisadores />} />
                 <Route path="/pesquisa" element={<Pesquisa />} />
                 <Route path="/biblioteca" element={<Biblioteca />} />
+                <Route path="/projetos" element={<Projetos />} />
         </Routes>
         </div>
         
