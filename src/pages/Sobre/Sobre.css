@@ -45,6 +45,11 @@
     color: #FFFFFF;
 }
 
+.mainsobre {
+    height: 1300px;
+    max-height: 1300px;
+}
+
 .contato {
     background-image: url("./images/contato.png");
     width: 140px;

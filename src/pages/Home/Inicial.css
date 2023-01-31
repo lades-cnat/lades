@@ -6,12 +6,12 @@
 
 html,
 body {
-  font-family: 'Khand', sans-serif;
+    font-family: 'Khand', sans-serif;
 }
 
 * {
-  padding: 0;
-  margin: 0;
+    padding: 0;
+    margin: 0;
 }
 
 
@@ -21,283 +21,309 @@ body {
 
 
 .header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 100%;
-  max-width: auto;
-  height: 62px;
-  
-  background-color: #15421C;
-  }
-  
-  .logopri {
-      padding: 40px !important;
-      width: 100%;
-      max-width: 121px;
-      min-width: 121px;
-  }
-  
-  .logoprimob {
-      display: none;
-  }
-  .ulheader {
-      display: flex;
-      align-items: center;
-  }
-  
-  .ulcontato {
-      padding-left: 30px;
-      display: flex;
-      align-items: center;
-  }
-  
-  .nav {
-      padding-right: 2%;
-  }
-  
-  .nucleo{
-  padding: 15px;
-  
-  text-decoration: none;
-  font-family: 'Khand', sans-serif;
-  font-style: normal;
-  font-weight: 500;
-  font-size: 16px;
-  line-height: 24px;
-  background: none;
-  white-space: nowrap;
-          
-  color: #FFFFFF;
-  }
-  
-  .nucleo:hover {
-      color: #b2c9b7;
-      transition: 0,8s;
-  }
-  
-  .contato {
-  background-image: url("./images/contato.png");
-  width: 140px;
-  max-width: 140px;
-  height: 35px;
-  font-size: 15px;
-  color:#000000;
-  cursor: pointer;
-  text-align: center;
-  text-decoration: none;
-  outline: none;
-  background-color: #fff;
-  border: none;
-  border-radius: 50px;
-  transition-duration: 0.2s;
-  font-family: 'Khand', sans-serif;
-  }
-  
-  .contato:hover {
-      border: 1px solid #000000;
-  }
-  
-  .maincont {
-      background-image: url("./images/fundo.png");
-      background-color: #15421C;
-      background-size: 100%;
-      background-repeat: no-repeat;
-      overflow: hidden;
-      max-height: 1080px;
-  }
-  
-  .textomob{
-      display: none;
-  }
-  
-  .textop {
-  
-  min-width: 666px;
-  max-width: 666px;
-  height: 214px;
-              
-  font-family: 'Khand', sans-serif;
-  font-style: normal;
-  font-weight: 600;
-  font-size: 25px;
-  line-height: 76px;
-              
-  color: #FFFFFF;
-  }
-  
-  .logo{
-      min-width: 250px;
-      width: auto;
-      height: auto;
-  }
-  .logomob{
-      display: none;
-  }
-  
-  
-  .textandlogo {
-      display: flex;
-      justify-content: space-between;
-      padding: 200px;
-  }
-  
-  .midcont {
-      background-color: #EBEBEB;
-      background-size: 100%;
-      width: 100%;
-      height: 985px;
-      }
-  
-  .mid2cont {
-      background-color: #FFFFFF;
-      background-size: 100%;
-      width: 100%;
-      height: 735px;
-      }
-  
-  .flexh{
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      margin: 0 auto;
-      max-width: 1000px;
-  }
-  
-  .flexh > div {
-      flex: 1 1 253px;
-      margin: 40px;
-  }
-  
-  .ldp {
-  
-  text-align: center;
-  padding: 80px;
-  height: 50px;
-  font-family: 'Lexend';
-  font-style: normal;
-  font-weight: 500;
-  font-size: 40px;
-  line-height: 50px;
-      
-      
-  color: #15421C;
-  }
-  
-  .rectanhome{
-  width: 253px;
-  min-width: 253px;
-  max-width: 253px;
-  height: 245px;
-  
-          
-  background: #FFFFFF;
-  border-radius: 20px;
-  
-  }
-  
-  .figureh {
-  text-align: center;
-  margin-top: 20px;
-  }
-  
-  .figmobh{
-      display: none;
-  }
-  
-  .figdesch {
-  text-align: center;
-  margin-top: 30px;
-  
-  font-family: 'Lexend';
-  font-style: normal;
-  font-weight: 700;
-  font-size: 16px;
-  line-height: 20px;
-  text-align: center;
-  
-  color: #000000;
-  }
-  
-  .rec2 {
-  width: 292px;
-  max-width: 292px;
-  height: 390px;
-      
-  background: #EBEBEB;
-  border-radius: 20px;
-  }
-  
-  .flex2{
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      margin: 0 auto;
-      max-width: 1200px;
-  }
-  
-  .flex2 > div {
-      flex: 1 1 292px;
-      margin: 20px;
-      margin-top: 150px;
-  }
-  
-  .seci{
-      text-align: center;
-      margin-top: 20px;
-  }
-  
-  .secimob{
-      display: none;
-  }
-  
-  .rec2h1 {
-  margin-left: 30px;
-  margin-top: 10px;
-  
-  font-family: 'Lexend';
-  font-style: normal;
-  font-weight: 700;
-  font-size: 25px;
-  line-height: 31px;
-  
-  color: #15421C;
-  }
-  
-  .rec2desc {
-  margin-left: 30px;
-  margin-top: 10px;
-  
-  font-family: 'Anaheim';
-  font-style: normal;
-  font-weight: 400;
-  font-size: 25px;
-  line-height: 32px;
-  
-  color: #000000;
-  }
-  
-  .footer {
-      background-image: url("./images/footerback.png");
-      background-color: #15421C;
-      background-size: 100%;
-      background-repeat: no-repeat;
-      overflow: hidden;
-      max-height: 1080px;
-  }
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: auto;
+    height: 62px;
 
-.footerfirstpart{
+    background-color: #15421C;
+}
+
+.logopri {
+    padding: 40px !important;
+    width: 100%;
+    max-width: 121px;
+    min-width: 121px;
+}
+
+.logoprimob {
+    display: none;
+}
+
+.ulheader {
+    display: flex;
+    align-items: center;
+}
+
+.ulcontato {
+    padding-left: 30px;
+    display: flex;
+    align-items: center;
+}
+
+.nav {
+    padding-right: 2%;
+}
+
+.nucleo {
+    padding: 15px;
+
+    text-decoration: none;
+    font-family: 'Khand', sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 24px;
+    background: none;
+    white-space: nowrap;
+
+    color: #FFFFFF;
+}
+
+.nucleo:hover {
+    color: #b2c9b7;
+    transition: 0, 8s;
+}
+
+.contato {
+    background-image: url("./images/contato.png");
+    width: 140px;
+    max-width: 140px;
+    height: 35px;
+    font-size: 15px;
+    color: #000000;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    outline: none;
+    background-color: #fff;
+    border: none;
+    border-radius: 50px;
+    transition-duration: 0.2s;
+    font-family: 'Khand', sans-serif;
+}
+
+.contato:hover {
+    border: 1px solid #000000;
+}
+
+.maincont {
+    background-image: url("./images/fundo.png");
+    background-color: #15421C;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    overflow: hidden;
+    max-height: 1080px;
+}
+
+.textomob {
+    display: none;
+}
+
+.textop {
+
+    min-width: 666px;
+    max-width: 666px;
+    height: 214px;
+
+    font-family: 'Khand', sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 25px;
+    line-height: 76px;
+
+    color: #FFFFFF;
+}
+
+.logo {
+    min-width: 250px;
+    width: auto;
+    height: auto;
+}
+
+.logomob {
+    display: none;
+}
+
+
+.textandlogo {
+    display: flex;
+    justify-content: space-between;
+    padding: 200px;
+}
+
+.midcont {
+    background-color: #EBEBEB;
+    background-size: 100%;
+    width: 100%;
+    height: 985px;
+}
+
+.mid2cont {
+    background-color: #FFFFFF;
+    background-size: 100%;
+    width: 100%;
+    height: 735px;
+}
+
+.flexh {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: 0 auto;
+    max-width: 1000px;
+}
+
+.flexh>div {
+    flex: 1 1 253px;
+    margin: 40px;
+}
+
+.ldp {
+
+    text-align: center;
+    padding: 80px;
+    height: 50px;
+    font-family: 'Lexend';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 40px;
+    line-height: 50px;
+
+
+    color: #15421C;
+}
+
+.rectanhome {
+    width: 253px;
+    min-width: 253px;
+    max-width: 253px;
+    height: 245px;
+
+
+    background: #FFFFFF;
+    border-radius: 20px;
+
+}
+
+.figureh {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.figmobh {
+    display: none;
+}
+
+.figdesch {
+    text-align: center;
+    margin-top: 30px;
+
+    font-family: 'Lexend';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 20px;
+    text-align: center;
+
+    color: #000000;
+}
+
+.rec2 {
+    width: 292px;
+    max-width: 292px;
+    height: 390px;
+
+    background: #EBEBEB;
+    border-radius: 20px;
+}
+
+.flex2 {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: 0 auto;
+    max-width: 1200px;
+}
+
+.flex2>div {
+    flex: 1 1 292px;
+    margin: 20px;
+    margin-top: 150px;
+}
+
+.seci {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.secimob {
+    display: none;
+}
+
+.leiamais {
+    margin-top: 70px;
+    margin-left: 30px;
+    background-image: url("./images/leiamais.png");
+    width: 110px;
+    max-width: 110px;
+    height: 35px;
+    font-size: 15px;
+    color: #000000;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    outline: none;
+    border: none;
+    border-radius: 50px;
+    transition-duration: 0.2s;
+}
+
+.leiamaishref {
+    width: 110px;
+    height: 35px;
+}
+
+.rec2h1 {
+    margin-left: 30px;
+    margin-top: 10px;
+
+    font-family: 'Lexend';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 25px;
+    line-height: 31px;
+
+    color: #15421C;
+}
+
+.rec2desc {
+    margin-left: 30px;
+    margin-top: 10px;
+
+    font-family: 'Anaheim';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 25px;
+    line-height: 32px;
+
+    color: #000000;
+}
+
+.footer {
+    background-image: url("./images/footerback.png");
+    background-color: #15421C;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    overflow: hidden;
+    height: 780px;
+    max-height: 780px;
+}
+
+.footerfirstpart {
     height: 50%;
     padding: 40px;
 }
 
-.footersecpart{
+.footersecpart {
     height: 50%;
     padding: 40px;
-    
+
 }
 
-.compsltc{
+.compsltc {
     display: grid;
     /* aqui eu determino é são 3 colunas de tamanhos iguas, cada coluna tem uma fração */
     grid-template-rows: repeat(3, 1fr);
@@ -309,56 +335,53 @@ body {
     padding: 20px 10px;
 }
 
-  .textofooter {
+.textofooter {
     font-family: 'Khand', sans-serif;
     font-style: normal;
     font-weight: 600;
     font-size: 20px;
     line-height: 50px;
-                
+
     color: #FFFFFF;
-  }
+}
 
+.local {
+    width: 33.62px;
+    height: 48.02px;
+}
 
+.localrow {
+    display: flex;
+    align-items: center;
+}
 
-
-  .local{
-      width: 33.62px;
-      height: 48.02px;
-  }
-
-  .localrow{
-      display: flex;
-      align-items: center;
-  }
-
-  .localtext{
+.localtext {
     padding: 15px;
     font-family: 'Khand';
     font-style: normal;
     font-weight: 400;
     font-size: 24px;
     line-height: 37px;
-    
+
     color: #FFFFFF;
-  }
+}
 
-  .carta{
-      width: 41.38px;
-      height: 29.49px;
-  }
+.carta {
+    width: 41.38px;
+    height: 29.49px;
+}
 
-  .cartarow{
+.cartarow {
     display: flex;
     align-items: center;
 }
 
-  .telefone {
-      width: 40.52px;
-      height: 39.6px;
-  }
+.telefone {
+    width: 40.52px;
+    height: 39.6px;
+}
 
-  .telrow{
+.telrow {
     display: flex;
     align-items: center;
 }
@@ -366,217 +389,216 @@ body {
 
 
 
-  
-  @media (max-width: 1000px)
-  {
-  
-      .logopri{
-          display: none;
-      }
-      
-      .logoprimob {
-          text-align: center;
-          display: flex;
-          padding: 40px;
-          width: 100%;
-          max-width: 60.5px;
-          min-width: 60.5px;
-      }
-  
-      .ulheader{
+
+@media (max-width: 1000px) {
+
+    .logopri {
         display: none;
-      }
-  
-  
-      .maincont {
-          background-color: #15421C;
-          background-size: 100%;
-          background-repeat: no-repeat;
-          overflow: hidden;
-          max-height: 1080px;
-      }
-  
-      .textandlogo {
-          display: list-item;
-          text-align: center;
-          justify-content: center;
-          padding: 50px;
-          padding-bottom: 20%;
-  
-      }
-      
-      .textop{
-          display: none;
-      }
-      .textomob{
-          display: block;
-          padding-top: 10%;
-          text-align: center;
-          width: auto;
-          height: auto;
-          font-family: 'Khand', sans-serif;
-          font-style: normal;
-          font-weight: 600;
-          font-size: 12.5px;
-          line-height: 35.5px;
-                      
-          color: #FFFFFF;
-      }
-  
-      .logo{
-         display: none;
-  
-      }
-      .logomob{
-         display: block;
-          width: auto;
-          height: auto;
-      }
-  
-      .midcont{
-          height: fit-content;   
-      }
-  
-      .ldp {
-  
-          text-align: center;
-          padding: 80px;
-          height: 50px;
-          font-family: 'Lexend';
-          font-style: normal;
-          font-weight: 500;
-          font-size: 30px;
-          line-height: 40px;
-              
-              
-          color: #15421C;
-          }
-      .rectan{
-          width: 126.5px;
-          min-width: 126.5px;
-          max-width: 126.5px;
-          height: 122.5px;
-          
-                  
-          background: #FFFFFF;
-          border-radius: 20px;
-          
-          }
-  
-      .figure{
-          display: none;
-      }
-  
-      .figmob{
-          display: block;
-          text-align: center;
-          margin-top: 10px;
-      }
-  
-      .figdesc{
-          text-align: center;
-          margin-top: 10px;
-  
-          font-family: 'Lexend';
-          font-style: normal;
-          font-weight: 700;
-          font-size: 8px;
-          line-height: 10px;
-          text-align: center;
-  
-          color: #000000;
-      }
-  
-      .mid2cont {
-          height: fit-content;
-          }
-  
-      .rec2 {
-          width: 146px;
-          max-width: 146px;
-          height: 195px;
-              
-          background: #EBEBEB;
-          border-radius: 20px;
-          }
-  
-          
-          .flex2{
-              display: flex;
-              justify-content: center;
-              flex-wrap: wrap;
-              margin: 0 auto;
-              max-width: 1000px;
-          }
-          
-          .flex2 > div {
-              flex: 1 1 253px;
-              margin: 35px;
-          }
-          
-          .seci{
-              display: none;
-          }
-  
-          .secimob{
-              display: block;
-              text-align: center;
-              margin-top: 10px;
-          }
-          
-          .rec2h1 {
-              margin-top: -10px;
-              margin-left: 15px;
-              
-              font-family: 'Lexend';
-              font-style: normal;
-              font-weight: 700;
-              font-size: 12.5px;
-              line-height: 31px;
-              
-              color: #15421C;
-              }
-  
-          .rec2desc {
-              margin-left: 10px;
-              margin-top: 10px;
-  
-              font-family: 'Anaheim';
-              font-style: normal;
-              font-weight: 400;
-              font-size: 12.5px;
-              line-height: 15px;
-  
-              color: #000000;
-              }
-  
-              .footer{
-               height: 600px;
-              }
-  
-  }
-  @media (max-width: 850px)
-  {
-      .footer{
-          height: 500px;
-      }
-  }
-  
-  @media (max-width: 500px)
-  {
-      .footer{
-          height: 300px;
-      }
-  }
-  
-  @media (max-width: 412px)
-  {
-      .midcont{
-          height: fit-content;
-      }
-  
-      .footer
-      {
-          height: 250px;
-      }
-  }
+    }
+
+    .logoprimob {
+        text-align: center;
+        display: flex;
+        padding: 40px;
+        width: 100%;
+        max-width: 60.5px;
+        min-width: 60.5px;
+    }
+
+    .ulheader {
+        display: none;
+    }
+
+
+    .maincont {
+        background-color: #15421C;
+        background-size: 100%;
+        background-repeat: no-repeat;
+        overflow: hidden;
+        max-height: 1080px;
+    }
+
+    .textandlogo {
+        display: list-item;
+        text-align: center;
+        justify-content: center;
+        padding: 50px;
+        padding-bottom: 20%;
+
+    }
+
+    .textop {
+        display: none;
+    }
+
+    .textomob {
+        display: block;
+        padding-top: 10%;
+        text-align: center;
+        width: auto;
+        height: auto;
+        font-family: 'Khand', sans-serif;
+        font-style: normal;
+        font-weight: 600;
+        font-size: 12.5px;
+        line-height: 35.5px;
+
+        color: #FFFFFF;
+    }
+
+    .logo {
+        display: none;
+
+    }
+
+    .logomob {
+        display: block;
+        width: auto;
+        height: auto;
+    }
+
+    .midcont {
+        height: fit-content;
+    }
+
+    .ldp {
+
+        text-align: center;
+        padding: 80px;
+        height: 50px;
+        font-family: 'Lexend';
+        font-style: normal;
+        font-weight: 500;
+        font-size: 30px;
+        line-height: 40px;
+
+
+        color: #15421C;
+    }
+
+    .rectan {
+        width: 126.5px;
+        min-width: 126.5px;
+        max-width: 126.5px;
+        height: 122.5px;
+
+
+        background: #FFFFFF;
+        border-radius: 20px;
+
+    }
+
+    .figure {
+        display: none;
+    }
+
+    .figmob {
+        display: block;
+        text-align: center;
+        margin-top: 10px;
+    }
+
+    .figdesc {
+        text-align: center;
+        margin-top: 10px;
+
+        font-family: 'Lexend';
+        font-style: normal;
+        font-weight: 700;
+        font-size: 8px;
+        line-height: 10px;
+        text-align: center;
+
+        color: #000000;
+    }
+
+    .mid2cont {
+        height: fit-content;
+    }
+
+    .rec2 {
+        width: 146px;
+        max-width: 146px;
+        height: 195px;
+
+        background: #EBEBEB;
+        border-radius: 20px;
+    }
+
+
+    .flex2 {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        margin: 0 auto;
+        max-width: 1000px;
+    }
+
+    .flex2>div {
+        flex: 1 1 253px;
+        margin: 35px;
+    }
+
+    .seci {
+        display: none;
+    }
+
+    .secimob {
+        display: block;
+        text-align: center;
+        margin-top: 10px;
+    }
+
+    .rec2h1 {
+        margin-top: -10px;
+        margin-left: 15px;
+
+        font-family: 'Lexend';
+        font-style: normal;
+        font-weight: 700;
+        font-size: 12.5px;
+        line-height: 31px;
+
+        color: #15421C;
+    }
+
+    .rec2desc {
+        margin-left: 10px;
+        margin-top: 10px;
+
+        font-family: 'Anaheim';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 12.5px;
+        line-height: 15px;
+
+        color: #000000;
+    }
+
+    .footer {
+        height: 600px;
+    }
+
+}
+
+@media (max-width: 850px) {
+    .footer {
+        height: 500px;
+    }
+}
+
+@media (max-width: 500px) {
+    .footer {
+        height: 300px;
+    }
+}
+
+@media (max-width: 412px) {
+    .midcont {
+        height: fit-content;
+    }
+
+    .footer {
+        height: 250px;
+    }
+}

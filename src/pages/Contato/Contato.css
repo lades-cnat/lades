@@ -103,7 +103,7 @@
 }
 
 
-.mainbox {
+.mainboxx{
     box-sizing: border-box;
 
     width: 100%;
@@ -113,10 +113,31 @@
     min-height: 455px;
 
 
-    background: #4B6B50;
-    opacity: 0.25;
+    background: #ebebee;
     border: 1px solid #000000;
     border-radius: 20px;
+}
+
+.sendemail {
+    font-family: 'Khand';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 37px;
+
+    text-align: center;
+    padding-top: 60px;
+    color: #15421C;
+}
+
+.sendmail2 {
+    padding-top: 20px;
+    font-family: 'Khand';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 37px;
+    text-align: center;
 }
 
 .nucleo:hover {
@@ -130,6 +151,89 @@
 
 .contato:hover {
     border: 1px solid #FFFFFF;
+}
+
+.footer {
+    background-image: url("./images/footerback.png");
+    background-color: #15421C;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    overflow: hidden;
+    height: 780px;
+}
+
+.footerfirstpart{
+  height: 50%;
+  padding: 40px;
+}
+
+.footersecpart{
+  height: 50%;
+  padding: 40px;
+  
+}
+
+.compsltc{
+  display: grid;
+  /* aqui eu determino é são 3 colunas de tamanhos iguas, cada coluna tem uma fração */
+  grid-template-rows: repeat(3, 1fr);
+  /* esssa é a altura das linhas, se vc quiser pode apaga-la caso não queira uma altura definida */
+  grid-auto-rows: 100px;
+  /* espaço entre um elemento interno e outro */
+  grid-gap: 5px 8px;
+  /* margem interna que afasta os elementos da borda do grid */
+  padding: 20px 10px;
+}
+
+.textofooter {
+  font-family: 'Khand', sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 50px;
+              
+  color: #FFFFFF;
+}
+
+.local{
+    width: 33.62px;
+    height: 48.02px;
+}
+
+.localrow{
+    display: flex;
+    align-items: center;
+}
+
+.localtext{
+  padding: 15px;
+  font-family: 'Khand';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 24px;
+  line-height: 37px;
+  
+  color: #FFFFFF;
+}
+
+.carta{
+    width: 41.38px;
+    height: 29.49px;
+}
+
+.cartarow{
+  display: flex;
+  align-items: center;
+}
+
+.telefone {
+    width: 40.52px;
+    height: 39.6px;
+}
+
+.telrow{
+  display: flex;
+  align-items: center;
 }
 
 @media (max-width: 1000px) {

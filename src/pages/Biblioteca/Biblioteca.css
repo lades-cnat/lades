@@ -144,89 +144,83 @@
 }
 
 .sectionthree {
-    background: #0b220e;
+    background: #FFFFFF;
     background-size: 100%;
     max-width: 300vh;
-    height: 175px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    height: 1400px;
 }
 
-.searchbarr {
-    width: 750px;
-    height: 35px;
-    background-color: #FFFFFF;
-    border-radius: 10px;
-    display: flex;
-    align-items: center;
+.h1s {
+    text-align: center;
+    padding-top: 10vh;
+    background: linear-gradient(#b2c9b7 , #fff, #FFFFFF);
+    
 }
 
-.searchtext {
-    padding: 15px;
-    font-size: 16px;
-    opacity: 50%;
-}
-
-.sectionfour {
-    background-color: #0b220e;
-    max-width: 300vh;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.fb {
+.bibliotext {
     font-family: 'Lexend';
     font-style: normal;
-    font-weight: 500;
-    font-size: 16px;
-    line-height: 25px;
-    color: #FFFFFF;
-
-    margin-left: 15vh;
+    font-weight: 600;
+    font-size: 24px;
+    color: #15421C;
 }
 
-.sectionfive {
-    background-color: #0b220e;
-    max-width: 300vh;
-    height: 100px;
+.books {
+    padding-top: 100px;
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: 0 auto;
+    max-width: 1000px;
 }
 
-.fivedivs1 {
-    width: 250px;
-    height: 35px;
-    background-color: #FFFFFF;
-    border-radius: 10px;
-    display: flex;
-    align-items: center;
-    margin-left: 30vh;
-
+.books > div {
+    flex: 1 1 253px;
+    margin: 40px;
 }
 
-.fivedivs2 {
-    width: 250px;
-    height: 35px;
-    background-color: #FFFFFF;
-    border-radius: 10px;
-    display: flex;
-    align-items: center;
+.rectanp{
+    width: 253px;
+    min-width: 253px;
+    max-width: 253px;
+    height: 205px;
+    
+            
+    background: #EBEBEB;
+    border-radius: 20px;
+    
+    }
+    
+    .figure {
+    text-align: center;
+    }
+    
+    .figmob{
+        display: none;
+    }
 
+    .figdesc {
+        text-align: center;
+        margin-top: 15px;
+    
+        font-family: 'Lexend';
+        font-style: normal;
+        font-weight: 700;
+        font-size: 14px;
+        line-height: 20px;
+        text-align: center;
+        break-after: auto;
+    
+        color: #15421C;
+    }
+
+.livros{
+    height: 107px;
+    width: 75px;
 }
 
-.fivedivs3 {
-    width: 250px;
-    height: 35px;
-    background-color: #FFFFFF;
-    border-radius: 10px;
-    display: flex;
-    align-items: center;
-    margin-right: 30vh;
-}
+
+
 
 
 

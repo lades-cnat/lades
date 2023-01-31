@@ -19,7 +19,7 @@ function Page() {
   return (
     <div className="container">
       <head>
-        <title>NUDES</title>
+        <title>Lades</title>
         <meta name="description" content="Página home" />
         <link rel="icon" href="/favicon.ico" />
       </head>
@@ -27,7 +27,9 @@ function Page() {
       <header className="header">
 
         <div className="logopri">
+        <a href="/lades">
           <img src={logoprin} className="logopri" alt="Logo Lades" />
+        </a>
         </div>
 
         <div className="logoprimob">
@@ -37,7 +39,6 @@ function Page() {
         <nav className="nav">
           <ul className="ulheader">
             <a href="/lades/#/sobre" className="nucleo">LABORATÓRIO</a>
-            <a href="https://www.youtube.com/" className="nucleo">NOTICIAS</a>
             <a href="/lades/#/pesquisadores" className="nucleo">PESQUISADORES</a>
             <a href="/lades/#/pesquisa" className="nucleo">LINHAS DE PESQUISA</a>
             <a href="/lades/#/projetos" className="nucleo">PROJETOS</a>
@@ -195,7 +196,7 @@ function Page() {
 
               <h1 className="rec2h1">PROJETOS</h1>
 
-              <form action="https://youtube.com/">
+              <form action="/lades/#/contato">
                 <button type="submit" className="leiamais"></button>
               </form>
             </div>

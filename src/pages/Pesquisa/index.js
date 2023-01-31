@@ -2,7 +2,6 @@ import React from 'react';
 import './Pesquisa.css';
 
 
-import logonud from "./images/logonud.png"
 import logoprin from"./images/logoprin.png"
 import city from "./images/city.png"
 import pc from "./images/computador.png"
@@ -10,6 +9,9 @@ import db from "./images/db.png"
 import conex from "./images/conexa.png"
 import pcchar from "./images/pccharacter.png"
 import controle from "./images/controle.png"
+import local from "./images/localizacao.png"
+import carta from "./images/carta.png"
+import telefone from "./images/telefone 1.png"
 
 function Page() {
   return (
@@ -23,7 +25,9 @@ function Page() {
       <header className="header">
 
 <div className="logopri">
-        <img src={logoprin} className="logopri" alt="Logo Lades" />
+        <a href="/lades">
+          <img src={logoprin} className="logopri" alt="Logo Lades" />
+        </a>
 </div>
 
 <div className="logoprimob">
@@ -33,7 +37,6 @@ function Page() {
 <nav className="nav">
 <ul className="ulheader">
       <a href="/lades/#/sobre" className="nucleo">LABORATÓRIO</a>
-      <a href="https://www.youtube.com/" className="nucleo">NOTICIAS</a>
       <a href="/lades/#/pesquisadores" className="nucleo">PESQUISADORES</a>
       <a href="/lades/#/pesquisa" className="nucleo">LINHAS DE PESQUISA</a>
       <a href="/lades/#/projetos" className="nucleo">PROJETOS</a>
@@ -149,6 +152,37 @@ function Page() {
       </main>
       <footer className="footer">
 
+      <div className='footerfirstpart'>
+          <div className="textofooter">
+
+            <h1>LABORATÓRIO DE DESENVOLVIMENTO<br></br> DE SOFTWARE DO IFRN</h1>
+
+          </div>
+        </div>
+
+          <div className='footersecpart'>
+
+            <section className='compsltc'>
+
+            <div className='localrow'>
+            <img src={local} className="local" alt="Localização" />
+            <h1 className='localtext'>Avenida Senador Salgado Filho, 1559, Tirol, Natal-RN</h1>
+            </div>
+
+            <div className='telrow'>
+            <img src={telefone} className="telefone" alt="Telefone" />
+            <h1 className='localtext'>(84) 99090-9090</h1>
+            </div>
+
+            <div className='cartarow'>
+            <img src={carta} className="carta" alt="Carta" />
+            <h1 className='localtext'>nucleo-nudes@ifrn.edu.br</h1>
+            </div>
+
+            </section>
+
+          </div>
+          
       </footer>
     </div>
   );
