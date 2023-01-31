@@ -1,19 +1,34 @@
 {
   "files": {
-    "main.css": "/lades/static/css/main.0501687c.css",
-    "main.js": "/lades/static/js/main.04af6214.js",
+    "main.css": "/lades/static/css/main.4857c073.css",
+    "main.js": "/lades/static/js/main.a664641d.js",
     "static/js/787.22a94826.chunk.js": "/lades/static/js/787.22a94826.chunk.js",
+    "static/media/livro9.jpg": "/lades/static/media/livro9.193c65657706276fde5d.jpg",
+    "static/media/placido.png": "/lades/static/media/placido.30e19243a678ca1a3501.png",
+    "static/media/livro10.jpg": "/lades/static/media/livro10.eed07b64244c9b1317ec.jpg",
+    "static/media/livro3.jpg": "/lades/static/media/livro3.b85e7116b7c31a066a4c.jpg",
+    "static/media/livro8.jpg": "/lades/static/media/livro8.44679f9ff0948acbe5c9.jpg",
+    "static/media/livro11.jpg": "/lades/static/media/livro11.cd2d6559b438be3a0347.jpg",
+    "static/media/danielle.png": "/lades/static/media/danielle.507c272f7135418e6681.png",
+    "static/media/livro5.jpg": "/lades/static/media/livro5.50fe043bca7de1a48f31.jpg",
+    "static/media/demostenes.jpeg": "/lades/static/media/demostenes.697666047c57e0f25040.jpeg",
+    "static/media/livro6.jpg": "/lades/static/media/livro6.eb72d1561885b6e58c08.jpg",
     "static/media/mainimage.png": "/lades/static/media/mainimage.9b1de35aac39a40ccbdb.png",
+    "static/media/livro2.jpg": "/lades/static/media/livro2.586f53bf653374f60842.jpg",
+    "static/media/lucena.jpeg": "/lades/static/media/lucena.dcbae91307b1483e722d.jpeg",
+    "static/media/alessandro.jpeg": "/lades/static/media/alessandro.69cb10d8ede8a453c557.jpeg",
     "static/media/secitex.png": "/lades/static/media/secitex.f700091839238b039099.png",
     "static/media/footerback.png": "/lades/static/media/footerback.ad3b148c79b6d8a308e8.png",
+    "static/media/livro4.jpg": "/lades/static/media/livro4.fe0cd18e295a0729624a.jpg",
+    "static/media/livro12.jpg": "/lades/static/media/livro12.a1528e46d08e882941b5.jpg",
     "static/media/fundo.png": "/lades/static/media/fundo.5a3f3dc2e7683674d3a6.png",
     "index.html": "/lades/index.html",
-    "main.0501687c.css.map": "/lades/static/css/main.0501687c.css.map",
-    "main.04af6214.js.map": "/lades/static/js/main.04af6214.js.map",
+    "main.4857c073.css.map": "/lades/static/css/main.4857c073.css.map",
+    "main.a664641d.js.map": "/lades/static/js/main.a664641d.js.map",
     "787.22a94826.chunk.js.map": "/lades/static/js/787.22a94826.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.0501687c.css",
-    "static/js/main.04af6214.js"
+    "static/css/main.4857c073.css",
+    "static/js/main.a664641d.js"
   ]
 }
