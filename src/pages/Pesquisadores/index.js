@@ -36,14 +36,14 @@ function Page() {
 
 <nav className="nav">
 <ul className="ulheader">
-      <a href="/lades/#/sobre" className="nucleo">LABORATÓRIO</a>
-      <a href="/lades/#/pesquisadores" className="nucleo">PESQUISADORES</a>
-      <a href="/lades/#/pesquisa" className="nucleo">LINHAS DE PESQUISA</a>
-      <a href="/lades/#/projetos" className="nucleo">PROJETOS</a>
-      <a href="/lades/#/biblioteca" className="nucleo">BIBLIOTECA</a>
+      <a href="#/sobre" className="nucleo">LABORATÓRIO</a>
+      <a href="#/pesquisadores" className="nucleo">PESQUISADORES</a>
+      <a href="#/pesquisa" className="nucleo">LINHAS DE PESQUISA</a>
+      <a href="#/projetos" className="nucleo">PROJETOS</a>
+      <a href="#/biblioteca" className="nucleo">BIBLIOTECA</a>
 
 <ul className="ulcontato">
-<form action="/lades/#/contato">
+<form action="#/contato">
         <button type="submit" className="contato"></button>
     </form>
 </ul>
