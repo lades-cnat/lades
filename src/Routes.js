@@ -9,7 +9,7 @@ import Pesquisa from './pages/Pesquisa'
 import Biblioteca from './pages/Biblioteca'
 import Projetos from './pages/Projetos'
 
-export default () => {
+const App = () => {
 
     return (
         <div>
@@ -27,3 +27,5 @@ export default () => {
         
     );
 }
+
+export default App;
