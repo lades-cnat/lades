@@ -1,8 +1,6 @@
 import React from 'react';
 import './Sobre.css';
-
-
-import logoprin from "./images/logoprin.png"
+import Header from '../../components/header';
 import pcecelular from "./images/pcecelular.png"
 import celulares from "./images/celulares.png"
 import local from "./images/localizacao.png"
@@ -19,35 +17,7 @@ function Page() {
         <link rel="icon" href="/favicon.ico" />
       </head>
 
-      <header className="header">
-
-        <div className="logopri">
-          <a href="/">
-            <img src={logoprin} className="logopri" alt="Logo Lades" />
-          </a>
-        </div>
-
-        <div className="logoprimob">
-          <img src={logoprin} className="logoprimob" alt="Logo LADES" />
-        </div>
-
-        <nav className="nav">
-          <ul className="ulheader">
-            <a href="/#/sobre" className="nucleo">LABORATÓRIO</a>
-            <a href="/#/pesquisadores" className="nucleo">PESQUISADORES</a>
-            <a href="/#/pesquisa" className="nucleo">LINHAS DE PESQUISA</a>
-            <a href="/#/projetos" className="nucleo">PROJETOS</a>
-            <a href="/#/biblioteca" className="nucleo">BIBLIOTECA</a>
-
-            <ul className="ulcontato">
-              <form action="/#/contato">
-                <button type="submit" className="contato"></button>
-              </form>
-            </ul>
-          </ul>
-        </nav>
-
-      </header>
+      <Header />
 
       <main className="mainsobre">
         <h1 className="contate">Quem somos?</h1>

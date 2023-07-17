@@ -1,8 +1,6 @@
 import React from 'react';
 import './Contato.css';
-
-
-import logoprin from "./images/logoprin.png"
+import Header from '../../components/header';
 import mainimage from "./images/mainimage.png"
 import local from "./images/localizacao.png"
 import carta from "./images/carta.png"
@@ -17,35 +15,7 @@ function Page() {
         <link rel="icon" href="/favicon.ico" />
       </head>
 
-      <header className="header">
-
-        <div className="logopri">
-          <a href="/">
-            <img src={logoprin} className="logopri" alt="Logo Lades" />
-          </a>
-        </div>
-
-        <div className="logoprimob">
-          <img src={logoprin} className="logoprimob" alt="Logo Nudes" />
-        </div>
-
-        <nav className="nav">
-          <ul className="ulheader">
-            <a href="/#/sobre" className="nucleo">LABORATÓRIO</a>
-            <a href="/#/pesquisadores" className="nucleo">PESQUISADORES</a>
-            <a href="/#/pesquisa" className="nucleo">LINHAS DE PESQUISA</a>
-            <a href="/#/projetos" className="nucleo">PROJETOS</a>
-            <a href="/#/biblioteca" className="nucleo">BIBLIOTECA</a>
-
-            <ul className="ulcontato">
-              <form action="/#/contato">
-                <button type="submit" className="contato"></button>
-              </form>
-            </ul>
-          </ul>
-        </nav>
-
-      </header>
+      <Header />
 
       <main className="maincontato">
         <h1 className="contatec">Contate-nos</h1>
