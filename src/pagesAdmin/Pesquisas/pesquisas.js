@@ -33,7 +33,7 @@ function Pesquisas() {
         <h1>Registrar Pesquisa</h1>
         <form onSubmit={handleSubmit}>
   <div>
-    <label htmlFor="titulo">Título (obrigatório):</label>
+    <label htmlFor="titulo">Título: </label>
     <input
       type="text"
       id="titulo"
@@ -43,7 +43,7 @@ function Pesquisas() {
     />
   </div>
   <div>
-    <label htmlFor="imagem">Imagem (opcional):</label>
+    <label htmlFor="imagem">Imagem: </label>
     <input
       type="file"
       id="imagem"
@@ -51,7 +51,7 @@ function Pesquisas() {
     />
   </div>
   <div>
-    <label htmlFor="descricao">Descrição (obrigatória):</label>
+    <label htmlFor="descricao">Descrição=: </label>
     <textarea
       id="descricao"
       value={descricao}
