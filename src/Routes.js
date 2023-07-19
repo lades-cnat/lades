@@ -1,31 +1,20 @@
 import React from "react";
 import { Routes, Route } from 'react-router-dom';
 
-import Home from './pages/Home'
-import Contato from './pages/Contato'
-import Sobre from './pages/Sobre'
-import Pesquisadores from './pages/Pesquisadores'
-import Pesquisa from './pages/Pesquisa'
-import Biblioteca from './pages/Biblioteca'
-import Projetos from './pages/Projetos'
+import IntegrantesAdmin from './pagesAdmin/Integrantes/integrantes';
+import PesquisasAdmin from './pagesAdmin/Pesquisas/pesquisas';
+import InicioAdmin from './pagesAdmin/Inicio/inicio';
 
-const App = () => {
-
+const MyRoutes = () => {
     return (
         <div>
-        <Routes>
-
-                <Route exact path="/" element={<Home />} />
-                <Route path="/contato" element={<Contato />} />
-                <Route path="/sobre" element={<Sobre />} />
-                <Route path="/pesquisadores" element={<Pesquisadores />} />
-                <Route path="/pesquisa" element={<Pesquisa />} />
-                <Route path="/biblioteca" element={<Biblioteca />} />
-                <Route path="/projetos" element={<Projetos />} />
-        </Routes>
+            <Routes>
+                <Route path="/admin" element={<InicioAdmin />} />
+                <Route path="/integrantesAdmin" element={<IntegrantesAdmin />} />
+                <Route path="/pesquisasAdmin" element={<PesquisasAdmin />} />
+            </Routes>
         </div>
-        
     );
 }
 
-export default App;
+export default MyRoutes;
