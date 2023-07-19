@@ -4,6 +4,7 @@ import Footer from '../../components/footer';
 import '../Pesquisas/pesquisas.css';
 import DetalhesIntegrantes from './detalhes';
 
+
 function Integrantes() {
   const [integrantes, setIntegrantes] = useState([]);
   const [nome, setNome] = useState('');
@@ -35,7 +36,7 @@ function Integrantes() {
         <h1>Registrar Integrante</h1>
         <form onSubmit={handleSubmit}>
           <div>
-            <label htmlFor="nome">Nome (obrigatório):</label>
+            <label htmlFor="nome">Nome: </label>
             <input
               type="text"
               id="nome"
@@ -45,7 +46,7 @@ function Integrantes() {
             />
           </div>
           <div>
-            <label htmlFor="curriculo">Link para o currículo Lattes (opcional):</label>
+            <label htmlFor="curriculo">Link para o currículo Lattes: </label>
             <input
               type="url"
               id="curriculo"
@@ -54,7 +55,7 @@ function Integrantes() {
             />
           </div>
           <div>
-            <label htmlFor="email">Email (obrigatório):</label>
+            <label htmlFor="email">Email: </label>
             <input
               type="email"
               id="email"
@@ -64,7 +65,7 @@ function Integrantes() {
             />
           </div>
           <div>
-            <label htmlFor="papel">Papel (obrigatório):</label>
+            <label htmlFor="papel">Papel: </label>
             <select id="papel" value={papel} onChange={(e) => setPapel(e.target.value)} required>
               <option value="">Selecione um papel</option>
               <option value="pesquisador">Pesquisador</option>
