@@ -17,13 +17,26 @@ function Pesquisas() {
       nome: titulo,
       imagem: imagem,
       descricao: descricao,
+      detalhado: false,
     };
     setPesquisas([...pesquisas, novaPesquisa]);
     console.log('Dados do formulário de pesquisa:', { titulo, imagem, descricao });
+    // Limpamos os campos após o registro
+    setTitulo('');
+    setImagem(null);
+    setDescricao('');
   };
 
-  const handleDetalharPesquisa = (id) => {
-    console.log('Detalhar pesquisa com id:', id);
+  const detalharPesquisa = (id) => {
+    const novasPesquisas = pesquisas.map((pesquisa) =>
+      pesquisa.id === id ? { ...pesquisa, detalhado: !pesquisa.detalhado } : pesquisa
+    );
+    setPesquisas(novasPesquisas);
+  };
+
+  const handleRemoverPesquisa = (id) => {
+    const novasPesquisas = pesquisas.filter((pesquisa) => pesquisa.id !== id);
+    setPesquisas(novasPesquisas);
   };
 
   return (
@@ -32,43 +45,45 @@ function Pesquisas() {
       <main className="maincontato">
         <h1>Registrar Pesquisa</h1>
         <form onSubmit={handleSubmit}>
-  <div>
-    <label htmlFor="titulo">Título: </label>
-    <input
-      type="text"
-      id="titulo"
-      value={titulo}
-      onChange={(e) => setTitulo(e.target.value)}
-      required
-    />
-  </div>
-  <div>
-    <label htmlFor="imagem">Imagem: </label>
-    <input
-      type="file"
-      id="imagem"
-      onChange={(e) => setImagem(e.target.files[0])}
-    />
-  </div>
-  <div>
-    <label htmlFor="descricao">Descrição=: </label>
-    <textarea
-      id="descricao"
-      value={descricao}
-      onChange={(e) => setDescricao(e.target.value)}
-      required
-    />
-  </div>
-  <button type="submit">Registrar</button>
-</form>
+          <div>
+            <label htmlFor="titulo">Título: </label>
+            <input
+              type="text"
+              id="titulo"
+              value={titulo}
+              onChange={(e) => setTitulo(e.target.value)}
+              required
+            />
+          </div>
+          <div>
+            <label htmlFor="imagem">Imagem: </label>
+            <input
+              type="file"
+              id="imagem"
+              onChange={(e) => setImagem(e.target.files[0])}
+            />
+          </div>
+          <div>
+            <label htmlFor="descricao">Descrição: </label>
+            <textarea
+              id="descricao"
+              value={descricao}
+              onChange={(e) => setDescricao(e.target.value)}
+              required
+            />
+          </div>
+          <button type="submit">Registrar</button>
+        </form>
       </main>
       <aside>
-        <DetalhesPesquisas pesquisas={pesquisas} onDetalhar={handleDetalharPesquisa} />
+        <DetalhesPesquisas
+          pesquisas={pesquisas}
+          detalharPesquisa={detalharPesquisa}
+          onRemover={handleRemoverPesquisa}
+        />
       </aside>
-
       <Footer />
     </div>
-    
   );
 }
 

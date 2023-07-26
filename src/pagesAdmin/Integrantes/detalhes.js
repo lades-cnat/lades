@@ -1,13 +1,19 @@
 import React, { useState } from 'react';
 
 function CadaIntegrante({ nome, curriculo, email, papel, imagem, onDetalhar, onRemover, onEditar }) {
+  const [detalhado, setDetalhado] = useState(false);
+
+  const handleDetalharClick = () => {
+    setDetalhado(!detalhado);
+  };
+
   return (
     <div>
       <h3>{nome}</h3>
-      <button onClick={onDetalhar}>Detalhar</button>
+      <button onClick={handleDetalharClick}>{detalhado ? 'Esconder Detalhes' : 'Detalhar'}</button>
       <button onClick={onEditar}>Editar</button>
       <button onClick={onRemover}>Remover</button>
-      {onDetalhar && (
+      {detalhado && (
         <div>
           <p>Curriculum Lattes: {curriculo}</p>
           <p>Email: {email}</p>
