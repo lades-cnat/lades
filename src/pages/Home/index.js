@@ -1,5 +1,4 @@
 import React from 'react';
-
 import './Inicial.css';
 
 import logonud from "./images/logonud.png"
