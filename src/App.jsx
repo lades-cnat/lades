@@ -1,5 +1,12 @@
+import Rotas from './Rotas';
+import { useState } from 'react';
+
 function App() {
-  return <h1>Olá, mundo!</h1>
+  return (
+    <>
+      <Rotas />
+    </>
+  )
 }
 
 export default App
