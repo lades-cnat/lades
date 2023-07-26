@@ -3,6 +3,7 @@ import { Routes, Route } from 'react-router-dom';
 
 import IntegrantesAdmin from './pagesAdmin/Integrantes/integrantes';
 import PesquisasAdmin from './pagesAdmin/Pesquisas/pesquisas';
+import ProjetosAdmin from './pagesAdmin/Projetos/projetos';
 import InicioAdmin from './pagesAdmin/Inicio/inicio';
 import Login from './pagesAdmin/Login/login'
 
@@ -14,6 +15,7 @@ const MyRoutes = () => {
                 <Route path="/login" element={<Login />} />
                 <Route path="/integrantesAdmin" element={<IntegrantesAdmin />} />
                 <Route path="/pesquisasAdmin" element={<PesquisasAdmin />} />
+                <Route path="/projetosAdmin" element={<ProjetosAdmin />} />
             </Routes>
         </div>
     );
