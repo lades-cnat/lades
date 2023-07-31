@@ -1,6 +1,8 @@
 import React from 'react';
-
+import { BrowserRouter as Router } from 'react-router-dom';
 import Routes from './Routes';
+import { IntegrantesProvider } from './pagesAdmin/Integrantes/integrantesContext';
+import { PesquisasProvider } from './pagesAdmin/Pesquisas/pesquisasContext'; // Importe o PesquisasProvider
 
 class ErrorBoundary extends React.Component {
   constructor(props) {
@@ -23,9 +25,15 @@ class ErrorBoundary extends React.Component {
 
 function App() {
   return (
-    <ErrorBoundary>
-      <Routes />
-    </ErrorBoundary>
+    <Router>
+      <ErrorBoundary>
+        <IntegrantesProvider>
+          <PesquisasProvider> {/* Adicione o PesquisasProvider */}
+            <Routes />
+          </PesquisasProvider>
+        </IntegrantesProvider>
+      </ErrorBoundary>
+    </Router>
   );
 }
 
