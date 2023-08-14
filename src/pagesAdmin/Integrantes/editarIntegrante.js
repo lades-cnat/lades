@@ -41,27 +41,26 @@ function EditarIntegrante() {
     navigate('/integrantesAdmin');
   };
 
-
   return (
     <div className="container">
       <main className="maincontato">
-        <h1>Editar Integrante</h1>
+        <h1 className="mb-4">Editar Integrante</h1>
         <form onSubmit={handleSubmit}>
-          <div>
-            <label htmlFor="nome">Nome: </label>
-            <input type="text" id="nome" value={nome} onChange={(e) => setNome(e.target.value)} required />
+          <div className="mb-3">
+            <label htmlFor="nome" className="form-label">Nome:</label>
+            <input type="text" className="form-control" id="nome" value={nome} onChange={(e) => setNome(e.target.value)} required />
           </div>
-          <div>
-            <label htmlFor="curriculo">Link para o currículo Lattes: </label>
-            <input type="url" id="curriculo" value={curriculo} onChange={(e) => setCurriculo(e.target.value)} />
+          <div className="mb-3">
+            <label htmlFor="curriculo" className="form-label">Link para o currículo Lattes:</label>
+            <input type="url" className="form-control" id="curriculo" value={curriculo} onChange={(e) => setCurriculo(e.target.value)} />
           </div>
-          <div>
-            <label htmlFor="email">Email: </label>
-            <input type="email" id="email" value={email} onChange={(e) => setEmail(e.target.value)} required />
+          <div className="mb-3">
+            <label htmlFor="email" className="form-label">Email:</label>
+            <input type="email" className="form-control" id="email" value={email} onChange={(e) => setEmail(e.target.value)} required />
           </div>
-          <div>
-            <label htmlFor="papel">Papel: </label>
-            <select id="papel" value={papel} onChange={(e) => setPapel(e.target.value)} required>
+          <div className="mb-3">
+            <label htmlFor="papel" className="form-label">Papel:</label>
+            <select id="papel" className="form-select" value={papel} onChange={(e) => setPapel(e.target.value)} required>
               <option value="pesquisador">Pesquisador</option>
               <option value="colaborador">Colaborador</option>
               <option value="técnico">Técnico</option>
@@ -69,11 +68,11 @@ function EditarIntegrante() {
               <option value="lider">Líder</option>
             </select>
           </div>
-          <div>
-            <label htmlFor="imagem">Imagem do Integrante: </label>
-            <input type="file" id="imagem" onChange={(e) => setImagem(e.target.files[0])} />
+          <div className="mb-3">
+            <label htmlFor="imagem" className="form-label">Imagem do Integrante:</label>
+            <input type="file" className="form-control" id="imagem" onChange={(e) => setImagem(e.target.files[0])} />
           </div>
-          <button type="submit">Salvar</button>
+          <button type="submit" className="btn btn-primary">Salvar</button>
         </form>
       </main>
     </div>

@@ -1,4 +1,3 @@
-// editarPesquisa.js
 import React, { useState, useEffect } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import { usePesquisas } from './pesquisasContext';
@@ -9,7 +8,7 @@ function EditarPesquisa() {
   const navigate = useNavigate();
 
   const [titulo, setTitulo] = useState('');
-  const [imagem, setImagem] = useState(null);
+  const [imagem, setImagem] = useState('');
   const [descricao, setDescricao] = useState('');
 
   useEffect(() => {
@@ -34,42 +33,49 @@ function EditarPesquisa() {
     );
     setPesquisas(novasPesquisas);
     console.log('Dados do formulário de pesquisa atualizado:', pesquisaAtualizada);
+    // Armazenar temporariamente a URL da imagem no localStorage
+    if (imagem instanceof File) {
+      localStorage.setItem(`pesquisaImagem_${id}`, URL.createObjectURL(imagem));
+    }
     navigate('/pesquisasAdmin');
   };
 
   return (
     <div className="container">
       <main className="maincontato">
-        <h1>Editar Pesquisa</h1>
+        <h1 className="mb-4">Editar Pesquisa</h1>
         <form onSubmit={handleSubmit}>
-          <div>
-            <label htmlFor="titulo">Título: </label>
+          <div className="mb-3">
+            <label htmlFor="titulo" className="form-label">Título:</label>
             <input
               type="text"
+              className="form-control"
               id="titulo"
               value={titulo}
               onChange={(e) => setTitulo(e.target.value)}
               required
             />
           </div>
-          <div>
-            <label htmlFor="imagem">Imagem: </label>
+          <div className="mb-3">
+            <label htmlFor="imagem" className="form-label">Imagem:</label>
             <input
               type="file"
+              className="form-control"
               id="imagem"
               onChange={(e) => setImagem(e.target.files[0])}
             />
           </div>
-          <div>
-            <label htmlFor="descricao">Descrição: </label>
+          <div className="mb-3">
+            <label htmlFor="descricao" className="form-label">Descrição:</label>
             <textarea
+              className="form-control"
               id="descricao"
               value={descricao}
               onChange={(e) => setDescricao(e.target.value)}
               required
             />
           </div>
-          <button type="submit">Salvar</button>
+          <button type="submit" className="btn btn-primary">Salvar</button>
         </form>
       </main>
     </div>

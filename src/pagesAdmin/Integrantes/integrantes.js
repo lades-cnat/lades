@@ -1,7 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import Header from '../../components/header';
-import Footer from '../../components/footer';
 import { useIntegrantes } from './integrantesContext';
 
 function Integrantes() {
@@ -19,16 +18,16 @@ function Integrantes() {
     <div className="container">
       <Header />
       <main className="maincontato">
-        <h1>Lista de Integrantes</h1>
-        <Link to="/integrantesCriar">Registrar novo integrante</Link>
-        <table>
+        <h1 className="mb-4">Lista de Integrantes</h1>
+        <Link to="/integrantesCriar" className="mb-3 btn btn-primary">Registrar novo integrante</Link>
+        <table className="table">
           <thead>
             <tr>
+              <th>Foto Perfil</th>
               <th>Nome</th>
               <th>Curriculum Lattes</th>
               <th>Email</th>
               <th>Papel</th>
-              <th>Foto Perfil</th>
               <th></th>
               <th></th>
             </tr>
@@ -36,23 +35,34 @@ function Integrantes() {
           <tbody>
             {integrantes.map((integrante) => (
               <tr key={integrante.id}>
+                <td>
+                  {integrante.imagem && (
+                    <img
+                      src={
+                        integrante.imagem instanceof File
+                          ? URL.createObjectURL(integrante.imagem)
+                          : integrante.imagem
+                      }
+                      alt={`Foto de ${integrante.nome}`}
+                      style={{ width: '100px' }}
+                    />
+                  )}
+                </td>
                 <td>{integrante.nome}</td>
                 <td>{integrante.curriculo}</td>
                 <td>{integrante.email}</td>
                 <td>{integrante.papel}</td>
-                <td>{integrante.imagem && <img src={URL.createObjectURL(integrante.imagem)} alt={`Foto de ${integrante.nome}`} style={{ width: '100px' }} />}</td>
                 <td>
-                  <button onClick={() => handleRemoverIntegrante(integrante.id)}>Remover</button>
+                  <button onClick={() => handleRemoverIntegrante(integrante.id)} className="btn btn-danger">Remover</button>
                 </td>
                 <td>
-                  <Link to={`/integrantesEditar/${integrante.id}`}>Editar</Link>
+                  <Link to={`/integrantesEditar/${integrante.id}`} className="btn btn-primary">Editar</Link>
                 </td>
               </tr>
             ))}
           </tbody>
         </table>
       </main>
-      <Footer />
     </div>
   );
 }

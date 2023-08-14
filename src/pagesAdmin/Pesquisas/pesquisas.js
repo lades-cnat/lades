@@ -1,11 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import Header from '../../components/header';
-import Footer from '../../components/footer';
-import { usePesquisas } from './pesquisasContext'; 
+import { usePesquisas } from './pesquisasContext';
 
 function Pesquisas() {
-  const { pesquisas, setPesquisas } = usePesquisas(); // Use o hook usePesquisas
+  const { pesquisas, setPesquisas } = usePesquisas();
 
   const handleRemoverPesquisa = (id) => {
     const shouldRemove = window.confirm('Tem certeza que deseja remover esta pesquisa?');
@@ -19,13 +18,13 @@ function Pesquisas() {
     <div className="container">
       <Header />
       <main className="maincontato">
-        <h1>Lista Linhas de Pesquisas</h1>
-        <Link to="/pesquisasCriar">Registrar nova Linha de pesquisa</Link> 
-        <table>
+        <h1 className="mb-4">Lista Linhas de Pesquisas</h1>
+        <Link to="/pesquisasCriar" className="btn btn-primary mb-4">Registrar nova Linha de pesquisa</Link>
+        <table className="table">
           <thead>
             <tr>
-              <th>Título</th>
               <th>Imagem</th>
+              <th>Título</th>
               <th>Descrição</th>
               <th></th>
               <th></th>
@@ -34,21 +33,32 @@ function Pesquisas() {
           <tbody>
             {pesquisas.map((pesquisa) => (
               <tr key={pesquisa.id}>
+                <td>
+                  {pesquisa.imagem && (
+                    <img
+                      src={
+                        pesquisa.imagem instanceof File
+                          ? localStorage.getItem(`pesquisaImagem_${pesquisa.id}`)
+                          : pesquisa.imagem
+                      }
+                      alt={`Imagem de ${pesquisa.nome}`}
+                      style={{ width: '100px' }}
+                    />
+                  )}
+                </td>
                 <td>{pesquisa.nome}</td>
-                <td>{pesquisa.imagem && <img src={URL.createObjectURL(pesquisa.imagem)} alt={`Imagem de ${pesquisa.nome}`} style={{ width: '100px' }} />}</td>
                 <td>{pesquisa.descricao}</td>
                 <td>
-                  <button onClick={() => handleRemoverPesquisa(pesquisa.id)}>Remover</button>
+                  <button onClick={() => handleRemoverPesquisa(pesquisa.id)} className="btn btn-danger">Remover</button>
                 </td>
                 <td>
-                  <Link to={`/pesquisasEditar/${pesquisa.id}`}>Editar</Link>
+                  <Link to={`/pesquisasEditar/${pesquisa.id}`} className="btn btn-secondary">Editar</Link>
                 </td>
               </tr>
             ))}
           </tbody>
         </table>
       </main>
-      <Footer />
     </div>
   );
 }
