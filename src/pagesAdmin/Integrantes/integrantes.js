@@ -2,9 +2,11 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import Header from '../../components/header';
 import { useIntegrantes } from './integrantesContext';
+import { usePesquisas } from '../Pesquisas/pesquisasContext'; // Importe o contexto de pesquisas
 
 function Integrantes() {
   const { integrantes, setIntegrantes } = useIntegrantes();
+  const { pesquisas } = usePesquisas(); // Use o contexto de pesquisas
 
   const handleRemoverIntegrante = (id) => {
     const shouldRemove = window.confirm('Tem certeza que deseja remover este integrante?');
@@ -12,6 +14,13 @@ function Integrantes() {
       const novosIntegrantes = integrantes.filter((integrante) => integrante.id !== id);
       setIntegrantes(novosIntegrantes);
     }
+  };
+
+  const getLinhasPesquisa = (linhaIds) => {
+    return linhaIds.map(linhaId => {
+      const linhaPesquisa = pesquisas.find(pesquisa => pesquisa.id === linhaId);
+      return linhaPesquisa ? linhaPesquisa.nome : 'Linha de Pesquisa não encontrada';
+    }).join(', ');
   };
 
   return (
@@ -28,6 +37,7 @@ function Integrantes() {
               <th>Curriculum Lattes</th>
               <th>Email</th>
               <th>Papel</th>
+              <th>Linhas de Pesquisa</th>
               <th></th>
               <th></th>
             </tr>
@@ -52,6 +62,7 @@ function Integrantes() {
                 <td>{integrante.curriculo}</td>
                 <td>{integrante.email}</td>
                 <td>{integrante.papel}</td>
+                <td>{getLinhasPesquisa(integrante.linhasPesquisa)}</td>
                 <td>
                   <button onClick={() => handleRemoverIntegrante(integrante.id)} className="btn btn-danger">Remover</button>
                 </td>

@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
 import { useIntegrantes } from './integrantesContext';
+import { usePesquisas } from '../Pesquisas/pesquisasContext'; // Importe o contexto de pesquisas
 import { useNavigate } from 'react-router-dom';
 
 function CriarIntegrante() {
   const { integrantes, setIntegrantes } = useIntegrantes();
+  const { pesquisas } = usePesquisas(); // Use o contexto de pesquisas
   const navigate = useNavigate();
 
   const [nome, setNome] = useState('');
@@ -11,6 +13,7 @@ function CriarIntegrante() {
   const [email, setEmail] = useState('');
   const [papel, setPapel] = useState('');
   const [imagem, setImagem] = useState(null);
+  const [linhasPesquisa, setLinhasPesquisa] = useState([]); // Estado para armazenar as linhas de pesquisa selecionadas
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -21,6 +24,7 @@ function CriarIntegrante() {
       email: email,
       papel: papel,
       imagem: null,
+      linhasPesquisa: linhasPesquisa, // Associando as linhas de pesquisa ao integrante
     };
 
     if (imagem) {
@@ -29,24 +33,26 @@ function CriarIntegrante() {
         novoIntegrante.imagem = e.target.result;
         const novosIntegrantes = [...integrantes, novoIntegrante];
         setIntegrantes(novosIntegrantes);
-        console.log('Dados do formulário de integrante:', { nome, curriculo, email, papel, imagem });
+        console.log('Dados do formulário de integrante:', { nome, curriculo, email, papel, imagem, linhasPesquisa });
         setNome('');
         setCurriculo('');
         setEmail('');
         setPapel('');
         setImagem(null);
+        setLinhasPesquisa([]); // Limpar as linhas de pesquisa selecionadas
         navigate('/integrantesAdmin');
       };
       reader.readAsDataURL(imagem);
     } else {
       const novosIntegrantes = [...integrantes, novoIntegrante];
       setIntegrantes(novosIntegrantes);
-      console.log('Dados do formulário de integrante:', { nome, curriculo, email, papel, imagem });
+      console.log('Dados do formulário de integrante:', { nome, curriculo, email, papel, imagem, linhasPesquisa });
       setNome('');
       setCurriculo('');
       setEmail('');
       setPapel('');
       setImagem(null);
+      setLinhasPesquisa([]); // Limpar as linhas de pesquisa selecionadas
       navigate('/integrantesAdmin');
     }
   };
@@ -56,7 +62,7 @@ function CriarIntegrante() {
       <main className="maincontato">
         <h1 className="mb-4">Registrar Integrante</h1>
         <form onSubmit={handleSubmit}>
-        <div className="mb-3">
+          <div className="mb-3">
             <label htmlFor="imagem" className="form-label">Imagem do Integrante:</label>
             <input
               type="file"
@@ -113,6 +119,28 @@ function CriarIntegrante() {
               <option value="estudante">Estudante</option>
               <option value="lider">Líder</option>
             </select>
+          </div>
+          <div className="mb-3">
+            <label className="form-label">Linhas de Pesquisa:</label>
+            {pesquisas.map((pesquisa) => (
+              <div key={pesquisa.id} className="form-check">
+                <input
+                  type="checkbox"
+                  id={`pesquisa-${pesquisa.id}`}
+                  className="form-check-input"
+                  checked={linhasPesquisa.includes(pesquisa.id)}
+                  onChange={(e) => {
+                    const pesquisaId = pesquisa.id;
+                    if (e.target.checked) {
+                      setLinhasPesquisa((prevLinhasPesquisa) => [...prevLinhasPesquisa, pesquisaId]);
+                    } else {
+                      setLinhasPesquisa((prevLinhasPesquisa) => prevLinhasPesquisa.filter(id => id !== pesquisaId));
+                    }
+                  }}
+                />
+                <label htmlFor={`pesquisa-${pesquisa.id}`} className="form-check-label">{pesquisa.nome}</label>
+              </div>
+            ))}
           </div>
           <button type="submit" className="btn btn-primary">Registrar</button>
         </form>

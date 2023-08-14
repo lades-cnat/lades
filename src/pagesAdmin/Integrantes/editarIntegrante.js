@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate, useParams } from 'react-router-dom'; 
 import { useIntegrantes } from './integrantesContext';
+import { usePesquisas } from '../Pesquisas/pesquisasContext'; // Importe o contexto de pesquisas
 
 function EditarIntegrante() {
   const { integrantes, setIntegrantes } = useIntegrantes();
+  const { pesquisas } = usePesquisas(); // Use o contexto de pesquisas
   const { id } = useParams();
   const navigate = useNavigate(); 
   const [nome, setNome] = useState('');
@@ -11,6 +13,7 @@ function EditarIntegrante() {
   const [email, setEmail] = useState('');
   const [papel, setPapel] = useState('');
   const [imagem, setImagem] = useState(null);
+  const [pesquisasAssociadas, setPesquisasAssociadas] = useState([]);
 
   useEffect(() => {
     const integrante = integrantes.find((integrante) => integrante.id === parseInt(id));
@@ -20,26 +23,42 @@ function EditarIntegrante() {
       setEmail(integrante.email);
       setPapel(integrante.papel);
       setImagem(integrante.imagem);
+      setPesquisasAssociadas(integrante.pesquisas || []);
     }
   }, [integrantes, id]);
 
+  const handlePesquisaToggle = (pesquisaId) => {
+    const pesquisaIndex = pesquisasAssociadas.indexOf(pesquisaId);
+    if (pesquisaIndex === -1) {
+      setPesquisasAssociadas([...pesquisasAssociadas, pesquisaId]);
+    } else {
+      const newPesquisasAssociadas = pesquisasAssociadas.filter(id => id !== pesquisaId);
+      setPesquisasAssociadas(newPesquisasAssociadas);
+    }
+  };
+
   const handleSubmit = (event) => {
     event.preventDefault();
-    const integranteAtualizado = {
-      id: parseInt(id),
-      nome: nome,
-      curriculo: curriculo,
-      email: email,
-      papel: papel,
-      imagem: imagem,
-    };
-    const novosIntegrantes = integrantes.map((integrante) =>
-      integrante.id === parseInt(id) ? integranteAtualizado : integrante
-    );
-    setIntegrantes(novosIntegrantes);
-    console.log('Dados do formulário de integrante atualizado:', integranteAtualizado);
-    navigate('/integrantesAdmin');
+    console.log('Pesquisas associadas antes de atualizar:', pesquisasAssociadas);
+    
+  const integranteAtualizado = {
+    id: parseInt(id),
+    nome: nome,
+    curriculo: curriculo,
+    email: email,
+    papel: papel,
+    imagem: imagem,
+    pesquisas: pesquisasAssociadas,
   };
+  
+  const novosIntegrantes = integrantes.map((integrante) =>
+    integrante.id === parseInt(id) ? integranteAtualizado : integrante
+  );
+  
+  setIntegrantes(novosIntegrantes);
+  console.log('Dados do formulário de integrante atualizado:', integranteAtualizado);
+  navigate('/integrantesAdmin');
+};
 
   return (
     <div className="container">
@@ -71,6 +90,27 @@ function EditarIntegrante() {
           <div className="mb-3">
             <label htmlFor="imagem" className="form-label">Imagem do Integrante:</label>
             <input type="file" className="form-control" id="imagem" onChange={(e) => setImagem(e.target.files[0])} />
+          </div>
+          {/* Campo para editar as pesquisas associadas */}
+          <div className="mb-3">
+            <label className="form-label">Pesquisas Associadas:</label>
+            <div>
+              {pesquisas.map(pesquisa => (
+                <div key={pesquisa.id} className="form-check">
+                  <input
+                    type="checkbox"
+                    className="form-check-input"
+                    id={`pesquisa-${pesquisa.id}`}
+                    value={pesquisa.id}
+                    checked={pesquisasAssociadas.includes(pesquisa.id)}
+                    onChange={() => handlePesquisaToggle(pesquisa.id)}
+                  />
+                  <label className="form-check-label" htmlFor={`pesquisa-${pesquisa.id}`}>
+                    {pesquisa.nome}
+                  </label>
+                </div>
+              ))}
+            </div>
           </div>
           <button type="submit" className="btn btn-primary">Salvar</button>
         </form>
