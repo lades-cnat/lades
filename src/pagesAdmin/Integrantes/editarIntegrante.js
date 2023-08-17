@@ -1,13 +1,14 @@
 import React, { useState, useEffect } from 'react';
-import { useNavigate, useParams } from 'react-router-dom'; 
+import { useNavigate, useParams } from 'react-router-dom';
 import { useIntegrantes } from './integrantesContext';
-import { usePesquisas } from '../Pesquisas/pesquisasContext'; // Importe o contexto de pesquisas
+import { usePesquisas } from '../Pesquisas/pesquisasContext';
 
 function EditarIntegrante() {
   const { integrantes, setIntegrantes } = useIntegrantes();
-  const { pesquisas } = usePesquisas(); // Use o contexto de pesquisas
+  const { pesquisas } = usePesquisas();
   const { id } = useParams();
-  const navigate = useNavigate(); 
+  const navigate = useNavigate();
+
   const [nome, setNome] = useState('');
   const [curriculo, setCurriculo] = useState('');
   const [email, setEmail] = useState('');
@@ -27,44 +28,76 @@ function EditarIntegrante() {
     }
   }, [integrantes, id]);
 
-  const handlePesquisaToggle = (pesquisaId) => {
-    const pesquisaIndex = pesquisasAssociadas.indexOf(pesquisaId);
-    if (pesquisaIndex === -1) {
-      setPesquisasAssociadas([...pesquisasAssociadas, pesquisaId]);
+  const handleImageChange = (event) => {
+    const newImage = event.target.files[0];
+  
+    if (newImage) {
+      const reader = new FileReader();
+      reader.onload = (e) => {
+        setImagem(e.target.result);
+      };
+      reader.readAsDataURL(newImage);
     } else {
-      const newPesquisasAssociadas = pesquisasAssociadas.filter(id => id !== pesquisaId);
-      setPesquisasAssociadas(newPesquisasAssociadas);
+      setImagem(null);
     }
+  };
+  
+  
+  
+
+  const handlePesquisaToggle = (pesquisaId) => {
+    setPesquisasAssociadas((prevPesquisasAssociadas) => {
+      if (prevPesquisasAssociadas.includes(pesquisaId)) {
+        return prevPesquisasAssociadas.filter((id) => id !== pesquisaId);
+      } else {
+        return [...prevPesquisasAssociadas, pesquisaId];
+      }
+    });
   };
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    console.log('Pesquisas associadas antes de atualizar:', pesquisasAssociadas);
-    
-  const integranteAtualizado = {
-    id: parseInt(id),
-    nome: nome,
-    curriculo: curriculo,
-    email: email,
-    papel: papel,
-    imagem: imagem,
-    pesquisas: pesquisasAssociadas,
+
+    const integranteAtualizado = {
+      id: parseInt(id),
+      nome: nome,
+      curriculo: curriculo,
+      email: email,
+      papel: papel,
+      imagem: imagem,
+      pesquisas: pesquisasAssociadas,
+    };
+
+    const novosIntegrantes = integrantes.map((integrante) =>
+      integrante.id === parseInt(id) ? integranteAtualizado : integrante
+    );
+
+    setIntegrantes(novosIntegrantes);
+    navigate('/integrantesAdmin');
   };
-  
-  const novosIntegrantes = integrantes.map((integrante) =>
-    integrante.id === parseInt(id) ? integranteAtualizado : integrante
-  );
-  
-  setIntegrantes(novosIntegrantes);
-  console.log('Dados do formulário de integrante atualizado:', integranteAtualizado);
-  navigate('/integrantesAdmin');
-};
 
   return (
     <div className="container">
       <main className="maincontato">
         <h1 className="mb-4">Editar Integrante</h1>
         <form onSubmit={handleSubmit}>
+        <div className="mb-3">
+          <label htmlFor="imagem" className="form-label">
+            Imagem do Integrante:
+          </label>
+          <input
+            type="file"
+            id="imagem"
+            className="form-control"
+            onChange={handleImageChange}
+          />
+          {imagem ? (
+            <img
+              src={imagem instanceof File ? URL.createObjectURL(imagem) : imagem}
+              alt={`Foto de ${nome}`}
+            />
+          ) : null}
+        </div>
           <div className="mb-3">
             <label htmlFor="nome" className="form-label">Nome:</label>
             <input type="text" className="form-control" id="nome" value={nome} onChange={(e) => setNome(e.target.value)} required />
@@ -88,14 +121,9 @@ function EditarIntegrante() {
             </select>
           </div>
           <div className="mb-3">
-            <label htmlFor="imagem" className="form-label">Imagem do Integrante:</label>
-            <input type="file" className="form-control" id="imagem" onChange={(e) => setImagem(e.target.files[0])} />
-          </div>
-          {/* Campo para editar as pesquisas associadas */}
-          <div className="mb-3">
             <label className="form-label">Pesquisas Associadas:</label>
             <div>
-              {pesquisas.map(pesquisa => (
+              {pesquisas.map((pesquisa) => (
                 <div key={pesquisa.id} className="form-check">
                   <input
                     type="checkbox"
@@ -112,6 +140,7 @@ function EditarIntegrante() {
               ))}
             </div>
           </div>
+
           <button type="submit" className="btn btn-primary">Salvar</button>
         </form>
       </main>

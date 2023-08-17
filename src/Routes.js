@@ -3,11 +3,13 @@ import { Routes, Route } from 'react-router-dom';
 
 import IntegrantesAdmin from './pagesAdmin/Integrantes/integrantes';
 import CriarIntegrante from "./pagesAdmin/Integrantes/criarIntegrante";
-import EditarIntegrante from './pagesAdmin/Integrantes/editarIntegrante';
+import EditarIntegrante from "./pagesAdmin/Integrantes/editarIntegrante";
 import PesquisasAdmin from './pagesAdmin/Pesquisas/pesquisas';
 import CriarPesquisa from "./pagesAdmin/Pesquisas/criarPesquisa";
 import EditarPesquisa from "./pagesAdmin/Pesquisas/editarPesquisa";
 import ProjetosAdmin from './pagesAdmin/Projetos/projetos';
+import CriarProjeto from "./pagesAdmin/Projetos/criarProjeto";
+import EditarProjeto from "./pagesAdmin/Projetos/editarProjeto";
 import InicioAdmin from './pagesAdmin/Inicio/inicio';
 import Login from './pagesAdmin/Login/login'
 
@@ -24,6 +26,8 @@ const MyRoutes = () => {
                 <Route path="/pesquisasCriar" element={<CriarPesquisa />} />
                 <Route path="/pesquisasEditar/:id" element={<EditarPesquisa />} />
                 <Route path="/projetosAdmin" element={<ProjetosAdmin />} />
+                <Route path="/projetosCriar" element={<CriarProjeto />} />
+                <Route path="/projetosEditar/:id" element={<EditarProjeto />} />
             </Routes>
         </div>
     );

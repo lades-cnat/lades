@@ -8,9 +8,9 @@ export function usePesquisas() {
 
 export function PesquisasProvider({ children }) {
   const [pesquisas, setPesquisas] = useState([]);
+  const [integrantesAssociados, setIntegrantesAssociados] = useState({}); 
 
   useEffect(() => {
-    // Carregar dados do localStorage no momento do carregamento da página
     const storedPesquisas = localStorage.getItem('pesquisas');
     if (storedPesquisas) {
       setPesquisas(JSON.parse(storedPesquisas));
@@ -18,12 +18,11 @@ export function PesquisasProvider({ children }) {
   }, []);
 
   useEffect(() => {
-    // Atualizar o localStorage sempre que o estado de pesquisas mudar
     localStorage.setItem('pesquisas', JSON.stringify(pesquisas));
   }, [pesquisas]);
 
   return (
-    <PesquisasContext.Provider value={{ pesquisas, setPesquisas }}>
+    <PesquisasContext.Provider value={{ pesquisas, setPesquisas, integrantesAssociados, setIntegrantesAssociados }}>
       {children}
     </PesquisasContext.Provider>
   );

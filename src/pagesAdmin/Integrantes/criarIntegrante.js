@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
 import { useIntegrantes } from './integrantesContext';
-import { usePesquisas } from '../Pesquisas/pesquisasContext'; // Importe o contexto de pesquisas
+import { usePesquisas } from '../Pesquisas/pesquisasContext';
 import { useNavigate } from 'react-router-dom';
 
 function CriarIntegrante() {
   const { integrantes, setIntegrantes } = useIntegrantes();
-  const { pesquisas } = usePesquisas(); // Use o contexto de pesquisas
+  const { pesquisas } = usePesquisas();
   const navigate = useNavigate();
 
   const [nome, setNome] = useState('');
@@ -13,7 +13,7 @@ function CriarIntegrante() {
   const [email, setEmail] = useState('');
   const [papel, setPapel] = useState('');
   const [imagem, setImagem] = useState(null);
-  const [linhasPesquisa, setLinhasPesquisa] = useState([]); // Estado para armazenar as linhas de pesquisa selecionadas
+  const [linhasPesquisa, setLinhasPesquisa] = useState([]);
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -24,7 +24,7 @@ function CriarIntegrante() {
       email: email,
       papel: papel,
       imagem: null,
-      linhasPesquisa: linhasPesquisa, // Associando as linhas de pesquisa ao integrante
+      pesquisas: linhasPesquisa,
     };
 
     if (imagem) {
@@ -39,7 +39,7 @@ function CriarIntegrante() {
         setEmail('');
         setPapel('');
         setImagem(null);
-        setLinhasPesquisa([]); // Limpar as linhas de pesquisa selecionadas
+        setLinhasPesquisa([]);
         navigate('/integrantesAdmin');
       };
       reader.readAsDataURL(imagem);
@@ -52,7 +52,7 @@ function CriarIntegrante() {
       setEmail('');
       setPapel('');
       setImagem(null);
-      setLinhasPesquisa([]); // Limpar as linhas de pesquisa selecionadas
+      setLinhasPesquisa([]);
       navigate('/integrantesAdmin');
     }
   };
