@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import { useIntegrantes } from './integrantesContext';
 import { usePesquisas } from '../Pesquisas/pesquisasContext';
+import Header from '../../components/header';
 
 function EditarIntegrante() {
   const { integrantes, setIntegrantes } = useIntegrantes();
@@ -78,6 +79,7 @@ function EditarIntegrante() {
 
   return (
     <div className="container">
+            <Header />
       <main className="maincontato">
         <h1 className="mb-4">Editar Integrante</h1>
         <form onSubmit={handleSubmit}>

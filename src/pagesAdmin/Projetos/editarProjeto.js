@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
-import { useProjetos } from './projetosContext'; 
+import { useProjetos } from './projetosContext';
+import Header from '../../components/header';
 
 function EditarProjeto() {
   const { projetos, setProjetos } = useProjetos(); 
@@ -42,6 +43,7 @@ function EditarProjeto() {
 
   return (
     <div className="container">
+              <Header />
       <main className="maincontato">
         <h1 className="mb-4">Editar Projeto</h1>
         <form onSubmit={handleSubmit}>

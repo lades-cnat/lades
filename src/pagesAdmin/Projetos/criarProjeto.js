@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useProjetos } from './projetosContext';
 import { useNavigate } from 'react-router-dom';
+import Header from '../../components/header';
 
 function CriarProjeto() {
   const { projetos, setProjetos } = useProjetos();
@@ -34,6 +35,7 @@ function CriarProjeto() {
 
   return (
     <div className="container">
+              <Header />
       <main className="maincontato">
         <h1 className="mb-4">Registrar Projeto</h1>
         <form onSubmit={handleSubmit}>

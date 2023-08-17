@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useIntegrantes } from './integrantesContext';
 import { usePesquisas } from '../Pesquisas/pesquisasContext';
 import { useNavigate } from 'react-router-dom';
+import Header from '../../components/header';
 
 function CriarIntegrante() {
   const { integrantes, setIntegrantes } = useIntegrantes();
@@ -59,6 +60,7 @@ function CriarIntegrante() {
 
   return (
     <div className="container">
+      <Header />
       <main className="maincontato">
         <h1 className="mb-4">Registrar Integrante</h1>
         <form onSubmit={handleSubmit}>

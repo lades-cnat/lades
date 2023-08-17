@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { usePesquisas } from './pesquisasContext';
 import { useNavigate } from 'react-router-dom';
+import Header from '../../components/header';
 
 function CriarPesquisa() {
   const { pesquisas, setPesquisas } = usePesquisas();
@@ -48,6 +49,7 @@ function CriarPesquisa() {
 
   return (
     <div className="container">
+            <Header />
       <main className="maincontato">
         <h1 className="mb-4">Registrar Pesquisa</h1>
         <form onSubmit={handleSubmit}>

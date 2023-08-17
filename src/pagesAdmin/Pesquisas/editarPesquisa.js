@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import { usePesquisas } from './pesquisasContext';
+import Header from '../../components/header';
 
 function EditarPesquisa() {
   const { pesquisas, setPesquisas } = usePesquisas();
@@ -41,6 +42,7 @@ function EditarPesquisa() {
 
   return (
     <div className="container">
+            <Header />
       <main className="maincontato">
         <h1 className="mb-4">Editar Pesquisa</h1>
         <form onSubmit={handleSubmit}>
