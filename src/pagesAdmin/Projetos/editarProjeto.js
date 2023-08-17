@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
-import { useProjetos } from './projetosContext'; // Importe o contexto de projetos
+import { useProjetos } from './projetosContext'; 
 
 function EditarProjeto() {
-  const { projetos, setProjetos } = useProjetos(); // Use o contexto de projetos
+  const { projetos, setProjetos } = useProjetos(); 
   const { id } = useParams();
   const navigate = useNavigate();
 

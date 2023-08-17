@@ -15,7 +15,7 @@ function CriarPesquisa() {
     const novaPesquisa = {
       id: Date.now(),
       nome: titulo,
-      imagem: null, // Inicialmente, definimos como null
+      imagem: null,
       descricao: descricao,
       detalhado: false,
     };
@@ -23,7 +23,7 @@ function CriarPesquisa() {
     if (imagem) {
       const reader = new FileReader();
       reader.onload = (e) => {
-        novaPesquisa.imagem = e.target.result; // Defina a imagem apenas para a pesquisa atual
+        novaPesquisa.imagem = e.target.result; 
         const novasPesquisas = [...pesquisas, novaPesquisa];
         setPesquisas(novasPesquisas);
         console.log('Dados do formulário de pesquisa:', { titulo, imagem, descricao });

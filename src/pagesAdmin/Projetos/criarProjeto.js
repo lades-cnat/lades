@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
-import { useProjetos } from './projetosContext'; // Importe o contexto de projetos
+import { useProjetos } from './projetosContext';
 import { useNavigate } from 'react-router-dom';
 
 function CriarProjeto() {
-  const { projetos, setProjetos } = useProjetos(); // Use o contexto de projetos
+  const { projetos, setProjetos } = useProjetos();
   const navigate = useNavigate();
 
   const [titulo, setTitulo] = useState('');

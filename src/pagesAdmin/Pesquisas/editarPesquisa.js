@@ -33,7 +33,6 @@ function EditarPesquisa() {
     );
     setPesquisas(novasPesquisas);
     console.log('Dados do formulário de pesquisa atualizado:', pesquisaAtualizada);
-    // Armazenar temporariamente a URL da imagem no localStorage
     if (imagem instanceof File) {
       localStorage.setItem(`pesquisaImagem_${id}`, URL.createObjectURL(imagem));
     }
