@@ -67,7 +67,7 @@ function EditarProjeto() {
             />
           </div>
           <div className="mb-3">
-            <label htmlFor="dataInicio" className="form-label">Data de Início:</label>
+            <label htmlFor="dataInicio" className="form-label">Data Início:</label>
             <input
               type="date"
               className="form-control"
@@ -78,7 +78,7 @@ function EditarProjeto() {
             />
           </div>
           <div className="mb-3">
-            <label htmlFor="dataFim" className="form-label">Data de Fim:</label>
+            <label htmlFor="dataFim" className="form-label">Data Fim:</label>
             <input
               type="date"
               className="form-control"

@@ -19,7 +19,7 @@ function Projetos() {
       <Header />
       <main className="maincontato">
         <h1 className="mb-4">Lista de Projetos</h1>
-        <Link to="/projetosCriar" className="mb-3 btn btn-primary">Registrar novo projeto</Link>
+        <Link to="/projetosCriar" className="mb-3 btn btn-primary">Registrar um novo projeto</Link>
         <table className="table">
           <thead>
             <tr>
