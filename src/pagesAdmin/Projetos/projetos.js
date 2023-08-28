@@ -2,16 +2,25 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import Header from '../../components/header';
 import { useProjetos } from './projetosContext';
+import { useIntegrantes } from '../Integrantes/integrantesContext';
 
 function Projetos() {
   const { projetos, setProjetos } = useProjetos();
+  const { integrantes } = useIntegrantes();
 
   const handleRemoverProjeto = (id) => {
     const shouldRemove = window.confirm('Tem certeza que deseja remover este projeto?');
     if (shouldRemove) {
       const novosProjetos = projetos.filter((projeto) => projeto.id !== id);
-      setProjetos(novosProjetos);  
+      setProjetos(novosProjetos);
     }
+  };
+
+  const getNomesIntegrantes = (integranteIds) => {
+    return integranteIds.map((integranteId) => {
+      const integrante = integrantes.find((i) => i.id === integranteId);
+      return integrante ? integrante.nome : 'Integrante não encontrado';
+    }).join(', ');
   };
 
   return (
@@ -27,6 +36,7 @@ function Projetos() {
               <th>Resumo</th>
               <th>Data Início</th>
               <th>Data Fim</th>
+              <th>Integrantes</th>
               <th></th>
               <th></th>
             </tr>
@@ -38,6 +48,7 @@ function Projetos() {
                 <td>{projeto.resumo}</td>
                 <td>{projeto.dataInicio}</td>
                 <td>{projeto.dataFim}</td>
+                <td>{getNomesIntegrantes(projeto.integrantes)}</td>
                 <td>
                   <button onClick={() => handleRemoverProjeto(projeto.id)} className="btn btn-danger">Remover</button>
                 </td>

@@ -2,16 +2,19 @@ import React, { useState, useEffect } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import { useProjetos } from './projetosContext';
 import Header from '../../components/header';
+import { useIntegrantes } from '../Integrantes/integrantesContext';
 
 function EditarProjeto() {
-  const { projetos, setProjetos } = useProjetos(); 
+  const { projetos, setProjetos } = useProjetos();
   const { id } = useParams();
   const navigate = useNavigate();
+  const { integrantes } = useIntegrantes();
 
   const [titulo, setTitulo] = useState('');
   const [resumo, setResumo] = useState('');
   const [dataInicio, setDataInicio] = useState('');
   const [dataFim, setDataFim] = useState('');
+  const [integrantesAssociados, setIntegrantesAssociados] = useState([]);
 
   useEffect(() => {
     const projeto = projetos.find((projeto) => projeto.id === parseInt(id));
@@ -20,8 +23,19 @@ function EditarProjeto() {
       setResumo(projeto.resumo);
       setDataInicio(projeto.dataInicio);
       setDataFim(projeto.dataFim);
+      setIntegrantesAssociados(projeto.integrantes || []);
     }
   }, [projetos, id]);
+
+  const handleIntegranteToggle = (integranteId) => {
+    setIntegrantesAssociados((prevIntegrantesAssociados) => {
+      if (prevIntegrantesAssociados.includes(integranteId)) {
+        return prevIntegrantesAssociados.filter((id) => id !== integranteId);
+      } else {
+        return [...prevIntegrantesAssociados, integranteId];
+      }
+    });
+  };
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -31,10 +45,13 @@ function EditarProjeto() {
       resumo: resumo,
       dataInicio: dataInicio,
       dataFim: dataFim,
+      integrantes: integrantesAssociados,
     };
+
     const novosProjetos = projetos.map((projeto) =>
       projeto.id === parseInt(id) ? projetoAtualizado : projeto
     );
+
     setProjetos(novosProjetos);
 
     console.log('Dados do formulário de projeto atualizado:', projetoAtualizado);
@@ -43,11 +60,11 @@ function EditarProjeto() {
 
   return (
     <div className="container">
-              <Header />
+      <Header />
       <main className="maincontato">
         <h1 className="mb-4">Editar Projeto</h1>
         <form onSubmit={handleSubmit}>
-          <div className="mb-3">
+        <div className="mb-3">
             <label htmlFor="titulo" className="form-label">Título:</label>
             <input
               type="text"
@@ -89,6 +106,26 @@ function EditarProjeto() {
               onChange={(e) => setDataFim(e.target.value)}
               required
             />
+          </div>          
+          <div className="mb-3">
+            <label className="form-label">Integrantes Associados:</label>
+            <div>
+              {integrantes.map((integrante) => (
+                <div key={integrante.id} className="form-check">
+                  <input
+                    type="checkbox"
+                    className="form-check-input"
+                    id={`integrante-${integrante.id}`}
+                    value={integrante.id}
+                    checked={integrantesAssociados.includes(integrante.id)}
+                    onChange={() => handleIntegranteToggle(integrante.id)}
+                  />
+                  <label className="form-check-label" htmlFor={`integrante-${integrante.id}`}>
+                    {integrante.nome}
+                  </label>
+                </div>
+              ))}
+            </div>
           </div>
           <button type="submit" className="btn btn-primary">Salvar</button>
         </form>
