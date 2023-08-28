@@ -10,14 +10,12 @@ import EditarPesquisa from "./pagesAdmin/Pesquisas/editarPesquisa";
 import ProjetosAdmin from './pagesAdmin/Projetos/projetos';
 import CriarProjeto from "./pagesAdmin/Projetos/criarProjeto";
 import EditarProjeto from "./pagesAdmin/Projetos/editarProjeto";
-import InicioAdmin from './pagesAdmin/Inicio/inicio';
 import Login from './pagesAdmin/Login/login'
 
 const MyRoutes = () => {
     return (
         <div>
             <Routes>
-                <Route path="/admin" element={<InicioAdmin />} />
                 <Route path="/login" element={<Login />} />
                 <Route path="/integrantesAdmin" element={<IntegrantesAdmin />} />
                 <Route path="/integrantesCriar" element={<CriarIntegrante  />} />
