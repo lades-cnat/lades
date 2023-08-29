@@ -3,6 +3,31 @@ import { useIntegrantes } from './integrantesContext';
 import { usePesquisas } from '../Pesquisas/pesquisasContext';
 import { useNavigate } from 'react-router-dom';
 import Header from '../../components/header';
+import { initializeApp } from "firebase/app";
+import { collection, addDoc, getFirestore } from "firebase/firestore"; 
+
+const firebaseConfig = {
+  apiKey: "AIzaSyDaxheNI71AxVuZb7uL2hj2FTPJvIPttOM",
+  authDomain: "lades-database.firebaseapp.com",
+  databaseURL: "https://lades-database-default-rtdb.firebaseio.com",
+  projectId: "lades-database",
+  storageBucket: "lades-database.appspot.com",
+  messagingSenderId: "485836266879",
+  appId: "1:485836266879:web:af4406cbaebf57762b4e4a",
+  measurementId: "G-H910BW4N3P"
+};
+const app = initializeApp(firebaseConfig);
+const db = getFirestore(app);
+
+async function adicionarIntegrante(integrante) {
+  try {
+    const docRef = await addDoc(collection(db, "integrantes"), integrante);
+    console.log("Documento criado com ID: ", docRef.id);
+    return docRef.id;
+  } catch (e) {
+    console.error("Erro ao adicionar documento: ", e);
+  }
+}
 
 function CriarIntegrante() {
   const { integrantes, setIntegrantes } = useIntegrantes();
@@ -19,7 +44,6 @@ function CriarIntegrante() {
   const handleSubmit = (event) => {
     event.preventDefault();
     const novoIntegrante = {
-      id: Date.now(),
       nome: nome,
       curriculo: curriculo,
       email: email,
@@ -56,6 +80,11 @@ function CriarIntegrante() {
       setLinhasPesquisa([]);
       navigate('/integrantesAdmin');
     }
+
+    adicionarIntegrante(novoIntegrante).then(result => {
+      novoIntegrante.id = result;
+      console.log(result);
+    });
   };
 
   return (
