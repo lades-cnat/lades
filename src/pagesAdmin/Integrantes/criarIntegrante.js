@@ -5,6 +5,7 @@ import { useNavigate } from 'react-router-dom';
 import Header from '../../components/header';
 import { initializeApp } from "firebase/app";
 import { collection, addDoc, getFirestore } from "firebase/firestore"; 
+import { getDownloadURL, getStorage, ref, uploadBytes } from 'firebase/storage';
 
 const firebaseConfig = {
   apiKey: "AIzaSyDaxheNI71AxVuZb7uL2hj2FTPJvIPttOM",
@@ -18,6 +19,8 @@ const firebaseConfig = {
 };
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
+const storage = getStorage();
+const storageRef = ref(storage, 'imagens')
 
 async function adicionarIntegrante(integrante) {
   try {
@@ -41,50 +44,37 @@ function CriarIntegrante() {
   const [imagem, setImagem] = useState(null);
   const [linhasPesquisa, setLinhasPesquisa] = useState([]);
 
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
+
+    let imageUrl = null;
+
+    if (imagem) {
+      const imageRef = ref(storageRef, imagem.name);
+
+      try {
+        await uploadBytes(imageRef, imagem);
+        imageUrl = await getDownloadURL(imageRef); // Alterado para getDownloadURL
+      } catch (error) {
+        console.error("Erro ao fazer o upload da imagem: " + error);
+      }
+    }
+
     const novoIntegrante = {
       nome: nome,
       curriculo: curriculo,
       email: email,
       papel: papel,
-      imagem: null,
+      imagem: imageUrl,
       pesquisas: linhasPesquisa,
     };
 
-    if (imagem) {
-      const reader = new FileReader();
-      reader.onload = (e) => {
-        novoIntegrante.imagem = e.target.result;
-        const novosIntegrantes = [...integrantes, novoIntegrante];
-        setIntegrantes(novosIntegrantes);
-        console.log('Dados do formulário de integrante:', { nome, curriculo, email, papel, imagem, linhasPesquisa });
-        setNome('');
-        setCurriculo('');
-        setEmail('');
-        setPapel('');
-        setImagem(null);
-        setLinhasPesquisa([]);
-        navigate('/integrantesAdmin');
-      };
-      reader.readAsDataURL(imagem);
-    } else {
-      const novosIntegrantes = [...integrantes, novoIntegrante];
-      setIntegrantes(novosIntegrantes);
-      console.log('Dados do formulário de integrante:', { nome, curriculo, email, papel, imagem, linhasPesquisa });
-      setNome('');
-      setCurriculo('');
-      setEmail('');
-      setPapel('');
-      setImagem(null);
-      setLinhasPesquisa([]);
-      navigate('/integrantesAdmin');
-    }
-
     adicionarIntegrante(novoIntegrante).then(result => {
-      novoIntegrante.id = result;
       console.log(result);
     });
+
+    navigate('/integrantesAdmin');
+    alert("Integrante adicionado!")
   };
 
   return (
@@ -97,6 +87,7 @@ function CriarIntegrante() {
             <label htmlFor="imagem" className="form-label">Imagem do Integrante:</label>
             <input
               type="file"
+              accept="image/png,image/jpeg"
               id="imagem"
               className="form-control"
               onChange={(e) => setImagem(e.target.files[0])}
