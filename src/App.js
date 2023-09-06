@@ -1,7 +1,6 @@
 import React from 'react';
 import { BrowserRouter as Router } from 'react-router-dom';
 import Routes from './Routes';
-import { IntegrantesProvider } from './pagesAdmin/Integrantes/integrantesContext';
 import { PesquisasProvider } from './pagesAdmin/Pesquisas/pesquisasContext';
 import { ProjetosProvider } from './pagesAdmin/Projetos/projetosContext';
 
@@ -27,15 +26,7 @@ class ErrorBoundary extends React.Component {
 function App() {
   return (
     <Router>
-      <ErrorBoundary>
-        <IntegrantesProvider>
-          <PesquisasProvider>
-            <ProjetosProvider>  
-             <Routes />
-            </ProjetosProvider>
-          </PesquisasProvider>
-        </IntegrantesProvider>
-      </ErrorBoundary>
+      <Routes />
     </Router>
   );
 }

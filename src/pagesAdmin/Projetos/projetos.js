@@ -2,11 +2,9 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import Header from '../../components/header';
 import { useProjetos } from './projetosContext';
-import { useIntegrantes } from '../Integrantes/integrantesContext';
 
 function Projetos() {
   const { projetos, setProjetos } = useProjetos();
-  const { integrantes } = useIntegrantes();
 
   const handleRemoverProjeto = (id) => {
     const shouldRemove = window.confirm('Tem certeza que deseja remover este projeto?');
@@ -18,8 +16,6 @@ function Projetos() {
 
   const getNomesIntegrantes = (integranteIds) => {
     return integranteIds.map((integranteId) => {
-      const integrante = integrantes.find((i) => i.id === integranteId);
-      return integrante ? integrante.nome : 'Integrante não encontrado';
     }).join(', ');
   };
 

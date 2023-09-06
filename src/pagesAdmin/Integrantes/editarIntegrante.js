@@ -1,12 +1,38 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
-import { useIntegrantes } from './integrantesContext';
-import { usePesquisas } from '../Pesquisas/pesquisasContext';
 import Header from '../../components/header';
+import { initializeApp } from "firebase/app";
+import { collection, setDoc, doc, getDoc, getFirestore } from "firebase/firestore"; 
+import { getDownloadURL, getStorage, ref, uploadBytes } from 'firebase/storage';
+
+const firebaseConfig = {
+  apiKey: "AIzaSyDaxheNI71AxVuZb7uL2hj2FTPJvIPttOM",
+  authDomain: "lades-database.firebaseapp.com",
+  databaseURL: "https://lades-database-default-rtdb.firebaseio.com",
+  projectId: "lades-database",
+  storageBucket: "lades-database.appspot.com",
+  messagingSenderId: "485836266879",
+  appId: "1:485836266879:web:af4406cbaebf57762b4e4a",
+  measurementId: "G-H910BW4N3P"
+};
+const app = initializeApp(firebaseConfig);
+const db = getFirestore(app);
+const integrantesRef = collection(db, "integrantes")
+const storage = getStorage();
+const storageRef = ref(storage, 'imagens')
+
+async function editarIntegrante(integranteId, novosDados) {
+  try {
+    const docRef = doc(db, "integrantes", integranteId);
+
+    await setDoc(doc(integrantesRef, integranteId), novosDados);
+    return docRef.id;
+  } catch (e) {
+    console.error("Erro ao adicionar documento: ", e);
+  }
+}
 
 function EditarIntegrante() {
-  const { integrantes, setIntegrantes } = useIntegrantes();
-  const { pesquisas } = usePesquisas();
   const { id } = useParams();
   const navigate = useNavigate();
 
@@ -15,19 +41,24 @@ function EditarIntegrante() {
   const [email, setEmail] = useState('');
   const [papel, setPapel] = useState('');
   const [imagem, setImagem] = useState(null);
-  const [pesquisasAssociadas, setPesquisasAssociadas] = useState([]);
+  const [linhasPesquisa, setLinhasPesquisa] = useState([]);
 
-  useEffect(() => {
-    const integrante = integrantes.find((integrante) => integrante.id === parseInt(id));
-    if (integrante) {
-      setNome(integrante.nome);
-      setCurriculo(integrante.curriculo);
-      setEmail(integrante.email);
-      setPapel(integrante.papel);
-      setImagem(integrante.imagem);
-      setPesquisasAssociadas(integrante.pesquisas || []);
+  useEffect( () => {
+    async function getData() {
+      let docRef = doc(db, "integrantes", id);
+      const docSnap = await getDoc(docRef)
+      const integrante = docSnap.data();
+      if (docRef) {
+        setNome(integrante.nome);
+        setCurriculo(integrante.curriculo);
+        setEmail(integrante.email);
+        setPapel(integrante.papel);
+        setImagem(integrante.imagem);
+        setLinhasPesquisa(integrante.pesquisas || []);
+      }
     }
-  }, [integrantes, id]);
+    getData();
+  }, [integrantesRef, id]);
 
   const handleImageChange = (event) => {
     const newImage = event.target.files[0];
@@ -47,7 +78,7 @@ function EditarIntegrante() {
   
 
   const handlePesquisaToggle = (pesquisaId) => {
-    setPesquisasAssociadas((prevPesquisasAssociadas) => {
+    setLinhasPesquisa((prevPesquisasAssociadas) => {
       if (prevPesquisasAssociadas.includes(pesquisaId)) {
         return prevPesquisasAssociadas.filter((id) => id !== pesquisaId);
       } else {
@@ -56,25 +87,37 @@ function EditarIntegrante() {
     });
   };
 
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
 
-    const integranteAtualizado = {
-      id: parseInt(id),
+    let imageUrl = null;
+
+    if (imagem) {
+      const imageRef = ref(storageRef, imagem.name);
+
+      try {
+        await uploadBytes(imageRef, imagem);
+        imageUrl = await getDownloadURL(imageRef);
+      } catch (error) {
+        console.error("Erro ao fazer o upload da imagem: " + error);
+      }
+    }
+
+    const novoIntegrante = {
       nome: nome,
       curriculo: curriculo,
       email: email,
       papel: papel,
-      imagem: imagem,
-      pesquisas: pesquisasAssociadas,
+      imagem: imageUrl,
+      pesquisas: linhasPesquisa,
     };
 
-    const novosIntegrantes = integrantes.map((integrante) =>
-      integrante.id === parseInt(id) ? integranteAtualizado : integrante
-    );
+    editarIntegrante(id, novoIntegrante).then(result => {
+      console.log(result);
+    });
 
-    setIntegrantes(novosIntegrantes);
     navigate('/integrantesAdmin');
+    alert("Integrante atualizado!")
   };
 
   return (
@@ -121,26 +164,6 @@ function EditarIntegrante() {
               <option value="estudante">Estudante</option>
               <option value="lider">Líder</option>
             </select>
-          </div>
-          <div className="mb-3">
-            <label className="form-label">Pesquisas Associadas:</label>
-            <div>
-              {pesquisas.map((pesquisa) => (
-                <div key={pesquisa.id} className="form-check">
-                  <input
-                    type="checkbox"
-                    className="form-check-input"
-                    id={`pesquisa-${pesquisa.id}`}
-                    value={pesquisa.id}
-                    checked={pesquisasAssociadas.includes(pesquisa.id)}
-                    onChange={() => handlePesquisaToggle(pesquisa.id)}
-                  />
-                  <label className="form-check-label" htmlFor={`pesquisa-${pesquisa.id}`}>
-                    {pesquisa.nome}
-                  </label>
-                </div>
-              ))}
-            </div>
           </div>
 
           <button type="submit" className="btn btn-primary">Salvar</button>

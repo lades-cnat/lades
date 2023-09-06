@@ -1,12 +1,10 @@
 import React, { useState } from 'react';
 import { useProjetos } from './projetosContext';
 import { useNavigate } from 'react-router-dom';
-import { useIntegrantes } from '../Integrantes/integrantesContext'; // Importe o contexto de integrantes
 import Header from '../../components/header';
 
 function CriarProjeto() {
   const { projetos, setProjetos } = useProjetos();
-  const { integrantes } = useIntegrantes(); // Obtenha a lista de integrantes
   const navigate = useNavigate();
 
   const [titulo, setTitulo] = useState('');
@@ -97,26 +95,6 @@ function CriarProjeto() {
           </div>
           <div className="mb-3">
             <label className="form-label">Associar Integrantes:</label>
-            {integrantes.map((integrante) => (
-              <div key={integrante.id} className="form-check">
-                <input
-                  type="checkbox"
-                  id={`integrante-${integrante.id}`}
-                  className="form-check-input"
-                  checked={integrantesAssociados.includes(integrante.id)}
-                  onChange={() => {
-                    setIntegrantesAssociados((prevIntegrantesAssociados) =>
-                      prevIntegrantesAssociados.includes(integrante.id)
-                        ? prevIntegrantesAssociados.filter((id) => id !== integrante.id)
-                        : [...prevIntegrantesAssociados, integrante.id]
-                    );
-                  }}
-                />
-                <label htmlFor={`integrante-${integrante.id}`} className="form-check-label">
-                  {integrante.nome}
-                </label>
-              </div>
-            ))}
           </div>
           <button type="submit" className="btn btn-primary">
             Registrar

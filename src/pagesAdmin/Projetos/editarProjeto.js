@@ -2,13 +2,11 @@ import React, { useState, useEffect } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import { useProjetos } from './projetosContext';
 import Header from '../../components/header';
-import { useIntegrantes } from '../Integrantes/integrantesContext';
 
 function EditarProjeto() {
   const { projetos, setProjetos } = useProjetos();
   const { id } = useParams();
   const navigate = useNavigate();
-  const { integrantes } = useIntegrantes();
 
   const [titulo, setTitulo] = useState('');
   const [resumo, setResumo] = useState('');
@@ -110,21 +108,6 @@ function EditarProjeto() {
           <div className="mb-3">
             <label className="form-label">Integrantes Associados:</label>
             <div>
-              {integrantes.map((integrante) => (
-                <div key={integrante.id} className="form-check">
-                  <input
-                    type="checkbox"
-                    className="form-check-input"
-                    id={`integrante-${integrante.id}`}
-                    value={integrante.id}
-                    checked={integrantesAssociados.includes(integrante.id)}
-                    onChange={() => handleIntegranteToggle(integrante.id)}
-                  />
-                  <label className="form-check-label" htmlFor={`integrante-${integrante.id}`}>
-                    {integrante.nome}
-                  </label>
-                </div>
-              ))}
             </div>
           </div>
           <button type="submit" className="btn btn-primary">Salvar</button>

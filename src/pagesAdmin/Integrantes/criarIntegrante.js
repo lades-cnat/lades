@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { useIntegrantes } from './integrantesContext';
 import { usePesquisas } from '../Pesquisas/pesquisasContext';
 import { useNavigate } from 'react-router-dom';
 import Header from '../../components/header';
@@ -33,7 +32,6 @@ async function adicionarIntegrante(integrante) {
 }
 
 function CriarIntegrante() {
-  const { integrantes, setIntegrantes } = useIntegrantes();
   const { pesquisas } = usePesquisas();
   const navigate = useNavigate();
 
@@ -54,7 +52,7 @@ function CriarIntegrante() {
 
       try {
         await uploadBytes(imageRef, imagem);
-        imageUrl = await getDownloadURL(imageRef); // Alterado para getDownloadURL
+        imageUrl = await getDownloadURL(imageRef);
       } catch (error) {
         console.error("Erro ao fazer o upload da imagem: " + error);
       }

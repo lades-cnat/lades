@@ -1,7 +1,6 @@
 import { React, useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import Header from '../../components/header';
-import { useIntegrantes } from './integrantesContext';
 import { usePesquisas } from '../Pesquisas/pesquisasContext';
 
 import { initializeApp } from "firebase/app";
@@ -32,7 +31,6 @@ async function getIntegrantes() {
 }
 
 function Integrantes() {
-  const { integrantes, setIntegrantes } = useIntegrantes();
   const { pesquisas } = usePesquisas();
   const [integrantesArray, setIntegrantesArray] = useState([]);
 
