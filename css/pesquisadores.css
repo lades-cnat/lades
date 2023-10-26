@@ -1,0 +1,52 @@
+main .projetos .buttons {
+    margin: 0 auto;
+    text-align: center;
+}
+
+
+main .pricipal_projeto {
+    position: relative;
+    display: flex;
+    width: 1200px;
+    flex-wrap: wrap;
+    margin: 0 auto;
+}
+
+main .pricipal_projeto .projetos {
+    /* Nome do projeto */
+    margin-top: 6em;
+    width: 280px;
+    padding: 25px;
+    flex-direction: column;
+    display: flex;
+}
+
+main .projetos .buttons p {
+    /* Name and Role */
+    font-family: 'Roboto', Arial, Helvetica, sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 20px;
+    text-align: center;
+    color: #405059;
+    margin: 20px 10px 20px 10px;
+    flex: none;
+    order: 0;
+    align-self: stretch;
+    flex-grow: 0;
+}
+
+main .pricipal_projeto .projetos .buttons .btn-projeto {
+    color: #ffffff;
+    padding: 10px 25px 10px 25px;
+    border: none;
+    background-color: #0C8F8F;
+}
+
+main .pricipal_projeto .projetos .buttons .lattes {
+    border: 2px solid #0C8F8F;
+    color: #0C8F8F;
+    padding: 10px 25px 10px 25px;
+    background-color: #ffffff;
+}
