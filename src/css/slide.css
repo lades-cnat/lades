@@ -1,0 +1,133 @@
+
+section .slider{
+    position: relative;
+    margin-top: 4em;
+    
+    width: 100%;
+    background-color: #405059;
+    padding:45px 50px 60px 40px ;
+}
+
+main   .slide-principal .slider h5{
+    /* CONHEÇA NOSSOS PROJETOS */
+
+
+font-family: 'Roboto',Arial, Helvetica, sans-serif;
+font-style: normal;
+font-weight: 800;
+font-size: 25px;
+line-height: 103px;
+/* identical to box height */
+letter-spacing: 0.06em;
+font-variant: all-small-caps;
+margin-left: 125px;
+color: #FFFFFF;
+
+
+}
+.slider-content{
+    display: flex;
+    margin: 0 auto;
+    width: 80%;
+}
+
+.slider-content input, .img-mobile{
+    display: none;
+}
+.slide-box div{
+    text-align: left;
+    display: block;
+    flex-wrap: nowrap;
+    width: 210px;
+    border-radius: 10px;
+}
+.slide-box div h4 {
+    /* Nome do projeto */
+font-family: 'Roboto',Arial, Helvetica, sans-serif;
+font-style: normal;
+font-weight: 400;
+font-size: 18px;
+line-height: 29px;
+
+color: #000000;
+
+
+}
+
+.slide-box div p{
+    /* Tem o objetivo de desenvolver softwares para melhorar a perfomance das pesquisas e análises */
+
+
+font-family: 'Roboto',Arial, Helvetica, sans-serif;
+font-style: normal;
+font-weight: 200;
+font-size: 15px;
+line-height: 23px;
+
+color: #000000bd;
+
+
+}
+
+.slide-box div button{
+    padding: 10px 30px 10px 30px;
+    border: none;
+    outline: none;
+    background-color: #0C8F8F;
+    color: white;
+    cursor: pointer;
+}
+.slide-box{
+    padding: 80px 20px 40px 10px;
+    height: auto;
+    position: relative;
+    transition: 1s;
+    margin-left: 20px;
+    background-color: #ffffff;
+    border-bottom:  5px solid #0C8F8F;
+}
+
+.nav-manual, .nav-auto{
+    position: absolute;
+    width: 100px;
+    margin-top:350px;
+    display: flex;
+    margin-left: 450px;
+    justify-content: space-between;
+}
+
+.nav-manual .manual-btn, .nav-auto div{
+    padding: 10px;
+    border-radius: 50%;
+    cursor: pointer; 
+        transition: 0.1s;
+        background-color: #0C8F8F;
+    }
+        
+
+.nav-manual .manual-btn:not(:last-child), .nav-auto div:not(:last-child){
+   
+    background-color: rgba(167, 167, 167, 0.39);
+    border: none;
+
+}
+
+.nav-manual .manual-btn:hover{
+    background-color: #0C8F8F;
+}
+
+
+#radio1:checked ~ .primeiro{
+    margin-left: 0px;
+}
+
+#radio2:checked ~ .primeiro{
+    margin-left: -40px;
+}
+
+#radio3:checked ~ .primeiro{
+    margin-left: -60px;
+}
+#radio4checked ~ .primeiro{
+    margin-left: -100px;
+}
