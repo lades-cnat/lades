@@ -9,11 +9,17 @@ body {
 }
 
 header {
-    background-color: #ffffff;
+    background-color: rgba(255, 255, 255, 0.6);
     width: 100%;
     padding: 30px;
     align-items: center;
     display: flex;
+    backdrop-filter: blur(13px);
+    transition: background-color 0.3s ease-in-out;
+}
+
+header:hover {
+    background-color: white;
 }
 
 a,
@@ -49,6 +55,33 @@ header nav ul li a {
     line-height: 26px;
     color: #000000;
 }
+
+nav .links {
+    position: relative;
+    display: inline-block;
+    text-decoration: none;
+    color: #000;
+  }
+  
+  nav .links::before {
+    content: "";
+    position: absolute;
+    display: block;
+    width: 0; /* Alteração aqui */
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: #0C8F8F;
+    transform-origin: left; /* Alteração aqui */
+    transform: scaleX(0);
+    transition: transform 0.3s ease, width 0.3s ease; /* Alteração aqui */
+  }
+  
+  nav .links:hover::before {
+    width: 100%; /* Alteração aqui */
+    transform: scaleX(1);
+  }
+  
 
 main .introducao_projetos .txt,
 .mes {

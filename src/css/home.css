@@ -83,16 +83,16 @@ p {
 
 .conferir h4 {
   font-family: 'Manrope', Arial, Helvetica, sans-serif;
-  font-weight: 500;
-  font-size: 20px;
+  font-weight: bold;
+  font-size: 25px;
   line-height: 41px;
   text-align: center;
   color: #FFFFFF;
+  margin-top: 40px;
 }
 
 .conferir p {
-  font-family: 'Belanosima', Arial, Helvetica, sans-serif;
-  font-weight: 600;
+  font-family: 'Roboto', Arial, Helvetica, sans-serif;
   font-size: 15px;
   line-height: 10px;
   text-align: center;
@@ -114,6 +114,8 @@ h3 {
   font-weight: bold;
   font-size: 40px;
   color: #405059;
+  margin-top: 30px;
+  margin-bottom: 30px;
 }
 
 .conferir .principal_conferir {
@@ -125,6 +127,8 @@ h3 {
   background-color: #0C8F8F;
   border-radius: 1000px 1000px 60px 60px;
   padding: 10px;
+  align-items: center;
+  box-shadow: 0 5px 10px 1px rgba(0, 0, 0, 0.2)
 }
 
 .conferir .principal_conferir ul {
@@ -142,14 +146,19 @@ h3 {
 }
 
 .conferir .principal_conferir button {
-  display: flex;
-  color: #ffffff;
-  background-color: transparent;
+  background-color: white;
   border: none;
+  border-radius: 500px;
+  padding: 5px;
+  display: flex;
   position: relative;
-  right: -200px;
-  width: 100px;
+  left: 35%;
   cursor: pointer;
+  transition: padding 0.1s ease-in-out;
+}
+
+.conferir .principal_conferir button:hover {
+  padding: 10px;
 }
 
 .nossos-numeros-pai {
@@ -233,6 +242,11 @@ footer {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.slide-box {
+  display: flex;
+  flex-direction: row;
 }
 
 .slide-principal {

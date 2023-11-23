@@ -1,6 +1,6 @@
-import '../css/home.css';
 import '../css/projetos.css';
 import '../css/slide.css';
+import '../css/home.css';
 import logo from '../assets/lades logo.svg';
 import objetivo from '../assets/nossoobjetivo.png';
 import logoif from '../assets/logoif.svg';
@@ -13,19 +13,19 @@ function Home() {
         <nav>
         <a href = "/"> <img width="100px" src={logo} alt="logo lades" /></a>
           <ul>
-            <li>
+            <li className="links">
               <a href="./sobre"> Sobre</a>
             </li>
-            <li>
+            <li className="links">
               <a href="./pesquisadores"> Pesquisadores</a>
             </li>
-            <li>
+            <li className="links">
               <a href="./linhasDePesquisa"> Pesquisas</a>
             </li>
-            <li>
+            <li className="links">
               <a href="./projetos"> Projetos</a>
             </li>
-            <li>
+            <li className="links">
               <a href="./contato"> Contato</a>
             </li>
           </ul>
@@ -84,7 +84,7 @@ function Home() {
                 <p>Estudantes</p>
               </li>
             </ul>
-            <button> veja mais &gt; </button>
+            <button> Veja mais&nbsp;<span>→</span> </button>
           </div>
 
           <div className="principal_conferir">
@@ -106,7 +106,7 @@ function Home() {
                 <p>Estudantes</p>
               </li>
             </ul>
-            <button> veja mais &gt; </button>
+            <button> Veja mais&nbsp;<span>→</span> </button>
           </div>
 
           <div className="principal_conferir">
@@ -128,7 +128,7 @@ function Home() {
                 <p>Estudantes</p>
               </li>
             </ul>
-            <button> veja mais &gt; </button>
+            <button> Veja mais&nbsp;<span>→</span> </button>
           </div>
         </section>
 
