@@ -179,7 +179,7 @@ useEffect(() => {
                 Conheça os membros da <br /> nossa equipe
               </p>
             </div>
-
+            
             <ul>
               <li>
                 <p>Coordenadores</p>

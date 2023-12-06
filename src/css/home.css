@@ -149,16 +149,16 @@ h3 {
   background-color: white;
   border: none;
   border-radius: 500px;
-  padding: 5px;
+  padding: 7px;
   display: flex;
   position: relative;
-  left: 35%;
+  bottom: 10px;
   cursor: pointer;
-  transition: padding 0.1s ease-in-out;
+  transition: padding 0.2s ease-in-out;
 }
 
 .conferir .principal_conferir button:hover {
-  padding: 10px;
+  padding: 14px;
 }
 
 .nossos-numeros-pai {

@@ -1,15 +1,16 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { getDatabase, ref, get } from 'firebase/database'; // Importando a função get
-import './Login.css';
+import { getDatabase, ref, get } from 'firebase/database';
+import { useAuth } from '../AuthContext';
+import '../css/Login.css';
 
 function Login() {
+  const { setAuthStatus } = useAuth();
   const navigate = useNavigate();
   const [password, setPassword] = useState('');
-  const [correctPassword, setCorrectPassword] = useState(''); // Estado para armazenar a senha correta
+  const [correctPassword, setCorrectPassword] = useState('');
 
   useEffect(() => {
-    // Obtendo a senha correta do Firebase
     const database = getDatabase();
     const senhaRef = ref(database, 'senha');
 
@@ -30,6 +31,7 @@ function Login() {
     e.preventDefault();
 
     if (password === correctPassword) {
+      setAuthStatus(true);
       navigate('/adm/integrantes');
     } else {
       alert('Senha incorreta. Tente novamente.');
