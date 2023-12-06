@@ -5,8 +5,71 @@ import logo from '../assets/lades logo.svg';
 import objetivo from '../assets/nossoobjetivo.png';
 import logoif from '../assets/logoif.svg';
 import ladesfooter from '../assets/ladesfooter.svg';
+import { initializeApp } from 'firebase/app';
+import { getDatabase, ref, get, child } from 'firebase/database';
+import { useState, useEffect } from 'react';
+
+
+const firebaseConfig = {
+  apiKey: "AIzaSyDaxheNI71AxVuZb7uL2hj2FTPJvIPttOM",
+  authDomain: "lades-database.firebaseapp.com",
+  databaseURL: "https://lades-database-default-rtdb.firebaseio.com",
+  projectId: "lades-database",
+  storageBucket: "lades-database.appspot.com",
+  messagingSenderId: "485836266879",
+  appId: "1:485836266879:web:af4406cbaebf57762b4e4a",
+  measurementId: "G-H910BW4N3P"
+};
+
+const app = initializeApp(firebaseConfig);
+
+const database = getDatabase(app);
+
+const projetosRef = ref(database, 'projetos');
+const pesquisasRef = ref(database, 'pesquisas');
+const integrantesRef = ref(database, 'integrantes');
+
+async function contagem(tabela) {
+  try {
+    const snapshot = await get(tabela);
+    let qtdDados = 0;
+
+    snapshot.forEach((childSnapshot) => {
+      qtdDados++;
+    });
+
+    return qtdDados;
+  } catch (error) {
+    console.error('Erro ao obter dados da tabela:', error);
+    throw error;
+  }
+}
 
 function Home() {
+  const [qtdProjetos, setQtdProjetos] = useState(0);
+  const [qtdPesquisas, setQtdPesquisas] = useState(0);
+  const [qtdIntegrantes, setQtdIntegrantes] = useState(0);
+
+useEffect(() => {
+  const fetchAllData = async () => {
+    try {
+      const [projetos, pesquisas, integrantes] = await Promise.all([
+        contagem(projetosRef),
+        contagem(pesquisasRef),
+        contagem(integrantesRef),
+      ]);
+
+      setQtdProjetos(projetos);
+      setQtdPesquisas(pesquisas);
+      setQtdIntegrantes(integrantes);
+    } catch (error) {
+      console.error(`Erro ao obter dados: ${error}`);
+    }
+  };
+
+  fetchAllData();
+}, []);
+
   return (
     <>
       <header>
@@ -202,17 +265,17 @@ function Home() {
 
               <div>
                 <span>Projetos</span>
-                <p>24</p>
+                <p>{ qtdProjetos }</p>
               </div>
 
               <div>
                 <span>Linha de pesquisas</span>
-                <p>6</p>
+                <p>{ qtdPesquisas }</p>
               </div>
 
               <div>
-                <span>Equipe</span>
-                <p>26</p>
+                <span>Pesquisadores</span>
+                <p>{ qtdIntegrantes }</p>
               </div>
 
               <div>
